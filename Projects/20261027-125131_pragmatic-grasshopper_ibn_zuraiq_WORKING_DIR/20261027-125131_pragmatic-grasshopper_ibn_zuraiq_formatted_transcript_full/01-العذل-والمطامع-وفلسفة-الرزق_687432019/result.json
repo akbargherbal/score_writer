@@ -1,0 +1,52 @@
+{
+  "audio": "01-\u0627\u0644\u0639\u0630\u0644-\u0648\u0627\u0644\u0645\u0637\u0627\u0645\u0639-\u0648\u0641\u0644\u0633\u0641\u0629-\u0627\u0644\u0631\u0632\u0642_687432019.wav",
+  "duration_seconds": 246.67866666666666,
+  "prompts": [
+    "timestamp",
+    "downbeat_meter",
+    "structure",
+    "key",
+    "chord_full",
+    "melody_full"
+  ],
+  "preset": "default",
+  "melody_only": false,
+  "dtype": "fp32",
+  "window_seconds": 300.0,
+  "overlap_seconds": 200.0,
+  "lookahead_seconds": 100.0,
+  "windows": [
+    {
+      "start": 0.0,
+      "end": 246.67866666666666,
+      "accept_start": 0.0,
+      "accept_end": 246.67866666666666,
+      "prefix_end": 0.0,
+      "generation_stop": null,
+      "window_index": 0,
+      "prefix_tokens": 0,
+      "tokens": 2598,
+      "events": 744,
+      "accepted_events": 744,
+      "elapsed_seconds": 34.920247604000906
+    }
+  ],
+  "elapsed_seconds": 36.76454010700036,
+  "warnings": [],
+  "peak_gpu_mib": 3382.48828125,
+  "melody_notes": 618,
+  "vocal_notes": 528,
+  "instrumental_notes": 90,
+  "events": 744,
+  "abc_measures": 173,
+  "abc_error": null,
+  "diagnostics": [
+    "measure 17: inferred 1/4 from downbeat span; declared numerators were [2]",
+    "measure 23: inferred 1/4 from downbeat span; declared numerators were [2]",
+    "measure 37: inferred 1/4 from downbeat span; declared numerators were [2]",
+    "measure 49: inferred 1/4 from downbeat span; declared numerators were [2]",
+    "measure 56: inferred 1/4 from downbeat span; declared numerators were [2]",
+    "measure 100: inferred 1/4 from downbeat span; declared numerators were [2]",
+    "measure 113: inferred 1/4 from downbeat span; declared numerators were [2]"
+  ]
+}

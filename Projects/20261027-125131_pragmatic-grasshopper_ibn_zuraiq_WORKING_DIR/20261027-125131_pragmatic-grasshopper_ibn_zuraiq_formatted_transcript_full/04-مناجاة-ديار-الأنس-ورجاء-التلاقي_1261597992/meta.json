@@ -1,0 +1,22 @@
+{
+  "tool": "arabmaqamrock-transcribe/1",
+  "created_utc": "2026-10-27T15:29:36Z",
+  "status": "ok",
+  "source_wav": "/content/arabmaqamrock/out/20261027-125131_pragmatic-grasshopper_ibn_zuraiq_formatted/04-مناجاة-ديار-الأنس-ورجاء-التلاقي_1261597992.wav",
+  "source_wav_sha256": "a805e690abbb2df3a3c0d319afc0d574540f37dcf74426ece1135edef8c4ef8c",
+  "source_wav_bytes": 41802028,
+  "duration_s": 217.719,
+  "model": "m-a-p/SheetSage2",
+  "model_revision": "b83c3d79a6d98bcffaf8f9ed112c90aa887887bc",
+  "melody_only": false,
+  "device": "cuda",
+  "dtype": "fp32",
+  "threads": 2,
+  "python": "3.11.17",
+  "torch": "2.8.0+cu126",
+  "transformers": "4.45.2",
+  "seconds": 32.6,
+  "abc": "score.abc",
+  "abc_sha256": "954ea3a67c0008cba422b77396ebafc919f8749dffe4a08f37a839f28c6d7056",
+  "abc_bytes": 2663
+}

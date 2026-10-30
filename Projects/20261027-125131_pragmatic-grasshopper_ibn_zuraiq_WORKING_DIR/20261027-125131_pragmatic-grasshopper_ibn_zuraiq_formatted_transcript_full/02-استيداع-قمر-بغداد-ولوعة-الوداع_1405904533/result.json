@@ -1,0 +1,48 @@
+{
+  "audio": "02-\u0627\u0633\u062a\u064a\u062f\u0627\u0639-\u0642\u0645\u0631-\u0628\u063a\u062f\u0627\u062f-\u0648\u0644\u0648\u0639\u0629-\u0627\u0644\u0648\u062f\u0627\u0639_1405904533.wav",
+  "duration_seconds": 257.5586666666667,
+  "prompts": [
+    "timestamp",
+    "downbeat_meter",
+    "structure",
+    "key",
+    "chord_full",
+    "melody_full"
+  ],
+  "preset": "default",
+  "melody_only": false,
+  "dtype": "fp32",
+  "window_seconds": 300.0,
+  "overlap_seconds": 200.0,
+  "lookahead_seconds": 100.0,
+  "windows": [
+    {
+      "start": 0.0,
+      "end": 257.5586666666667,
+      "accept_start": 0.0,
+      "accept_end": 257.5586666666667,
+      "prefix_end": 0.0,
+      "generation_stop": null,
+      "window_index": 0,
+      "prefix_tokens": 0,
+      "tokens": 2679,
+      "events": 735,
+      "accepted_events": 734,
+      "elapsed_seconds": 36.234147597999254
+    }
+  ],
+  "elapsed_seconds": 38.07275019199915,
+  "warnings": [],
+  "peak_gpu_mib": 3382.48828125,
+  "melody_notes": 593,
+  "vocal_notes": 445,
+  "instrumental_notes": 148,
+  "events": 734,
+  "abc_measures": 98,
+  "abc_error": null,
+  "diagnostics": [
+    "measure 41: inferred 3/4 from downbeat span; declared numerators were [4, 4, 4]",
+    "measure 97: padded final 1/4 span to declared 4/4 with trailing rest",
+    "measure 0: padded leading 7/8 span to 4/4 with preceding rest"
+  ]
+}

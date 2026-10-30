@@ -1,0 +1,22 @@
+{
+  "tool": "arabmaqamrock-transcribe/1",
+  "created_utc": "2026-10-27T15:25:25Z",
+  "status": "ok",
+  "source_wav": "/content/arabmaqamrock/out/20261027-125131_pragmatic-grasshopper_ibn_zuraiq_formatted/01-العذل-والمطامع-وفلسفة-الرزق_687432019.wav",
+  "source_wav_sha256": "e929a2e758b812b4a2ae5605edcf586e566a8345f86b9b0dcbe69eebea94dae8",
+  "source_wav_bytes": 47362348,
+  "duration_s": 246.679,
+  "model": "m-a-p/SheetSage2",
+  "model_revision": "b83c3d79a6d98bcffaf8f9ed112c90aa887887bc",
+  "melody_only": false,
+  "device": "cuda",
+  "dtype": "fp32",
+  "threads": 2,
+  "python": "3.11.17",
+  "torch": "2.8.0+cu126",
+  "transformers": "4.45.2",
+  "seconds": 36.8,
+  "abc": "score.abc",
+  "abc_sha256": "3900c5afd258d56a7b3bb12bb6b4cfb151059d01745150e610178ed5309b3349",
+  "abc_bytes": 3738
+}

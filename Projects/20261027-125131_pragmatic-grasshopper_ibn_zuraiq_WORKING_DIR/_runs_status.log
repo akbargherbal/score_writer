@@ -1,0 +1,24 @@
+=== START 01-العذل-والمطامع-وفلسفة-الرزق seed=687432019 cap=8000 (8000) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T12:52:03Z ===
+=== END 01-العذل-والمطامع-وفلسفة-الرزق seed=687432019 exit=0 cap=8000 2026-10-27T13:01:58Z ===
+=== START 01-العذل-والمطامع-وفلسفة-الرزق seed=3191702830 cap=8000 (8000) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T13:01:58Z ===
+=== END 01-العذل-والمطامع-وفلسفة-الرزق seed=3191702830 exit=0 cap=8000 2026-10-27T13:12:59Z ===
+=== START 01-العذل-والمطامع-وفلسفة-الرزق seed=2513861043 cap=8000 (8000) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T13:13:00Z ===
+=== END 01-العذل-والمطامع-وفلسفة-الرزق seed=2513861043 exit=0 cap=8000 2026-10-27T13:23:42Z ===
+=== START 02-استيداع-قمر-بغداد-ولوعة-الوداع seed=4030574137 cap=6750 (6750) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T13:23:43Z ===
+=== END 02-استيداع-قمر-بغداد-ولوعة-الوداع seed=4030574137 exit=0 cap=6750 2026-10-27T13:32:29Z ===
+=== START 02-استيداع-قمر-بغداد-ولوعة-الوداع seed=541029638 cap=6750 (6750) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T13:32:30Z ===
+=== END 02-استيداع-قمر-بغداد-ولوعة-الوداع seed=541029638 exit=0 cap=6750 2026-10-27T13:42:06Z ===
+=== START 02-استيداع-قمر-بغداد-ولوعة-الوداع seed=1405904533 cap=6750 (6750) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T13:42:07Z ===
+=== END 02-استيداع-قمر-بغداد-ولوعة-الوداع seed=1405904533 exit=0 cap=6750 2026-10-27T13:52:12Z ===
+=== START 03-تجرع-مرارة-البين-ووخز-الندم seed=1020265786 cap=7000 (7000) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T13:52:13Z ===
+=== END 03-تجرع-مرارة-البين-ووخز-الندم seed=1020265786 exit=0 cap=7000 2026-10-27T14:01:33Z ===
+=== START 03-تجرع-مرارة-البين-ووخز-الندم seed=73422623 cap=7000 (7000) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T14:01:33Z ===
+=== END 03-تجرع-مرارة-البين-ووخز-الندم seed=73422623 exit=0 cap=7000 2026-10-27T14:10:54Z ===
+=== START 03-تجرع-مرارة-البين-ووخز-الندم seed=3742961268 cap=7000 (7000) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T14:10:54Z ===
+=== END 03-تجرع-مرارة-البين-ووخز-الندم seed=3742961268 exit=0 cap=7000 2026-10-27T14:20:19Z ===
+=== START 04-مناجاة-ديار-الأنس-ورجاء-التلاقي seed=381822375 cap=6500 (6500) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T14:20:19Z ===
+=== END 04-مناجاة-ديار-الأنس-ورجاء-التلاقي seed=381822375 exit=0 cap=6500 2026-10-27T14:29:14Z ===
+=== START 04-مناجاة-ديار-الأنس-ورجاء-التلاقي seed=1261597992 cap=6500 (6500) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T14:29:15Z ===
+=== END 04-مناجاة-ديار-الأنس-ورجاء-التلاقي seed=1261597992 exit=0 cap=6500 2026-10-27T14:37:57Z ===
+=== START 04-مناجاة-ديار-الأنس-ورجاء-التلاقي seed=755154212 cap=6500 (6500) cot=off abc=none ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors 2026-10-27T14:37:57Z ===
+=== END 04-مناجاة-ديار-الأنس-ورجاء-التلاقي seed=755154212 exit=0 cap=6500 2026-10-27T14:46:32Z ===

@@ -1,0 +1,58 @@
+	Command being timed: "/content/arabmaqamrock/bin/audiocpp_cli --task gen --family yue2 --model /content/arabmaqamrock/models/Yue2-3B-GGUF --backend cuda --threads 8 --session-option yue2.model_gguf=yue2-3b-bf16.gguf --session-option yue2.vae_gguf=yue2-vae-f16.gguf --session-option yue2.ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors --session-option yue2.ar_lora_scale=1.0 --session-option yue2.nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors --session-option yue2.nar_lora_scale=1.0 --session-option yue2.attention=flash --lyrics ///***///
+[Intro | single clean guitar | close-mic'd, plate reverb, short decay]
+أَسْتَوْدِعُ اللَّهَ فِي بَغْدَادَ لِي قَمَرًا
+بِالْكَرْخِ مِنْ فَلَكِ الْأَزْرَارِ مَطْلَعُهُ...
+
+[Verse 1 | tender emotional vocals | muted nylon guitar and subtle strings]
+أَسْتَوْدِعُ اللَّهَ فِي بَغْدَادَ لِي قَمَرًا
+بِالْكَرْخِ مِنْ فَلَكِ الْأَزْرَارِ مَطْلَعُهُ...
+وَدَّعْتُهُ وَبِوُدِّي لَوْ يُوَدِّعُنِي
+صَفْوَ الْحَيَاةِ وَأَنِّي لَا أُوَدِّعُهُ...
+وَكَمْ تَشَفَّعَ بِي أَنْ لَا أُفَارِقَهُ
+وَلِلضَّرُورَاتِ حَالٌ لَا تُشَفِّعُهُ...
+وَكَمْ تَشَبَّثَ بِي يَوْمَ الرَّحِيلِ ضُحًى
+وَأَدْمُعِي مُسْتَهِلَّاتٌ وَأَدْمُعُهُ...
+
+[Chorus | passionate soaring vocals | full orchestral build and strings swell — Hijaz]
+أَسْتَوْدِعُ اللَّهَ فِي بَغْدَادَ لِي قَمَرًا
+بِالْكَرْخِ مِنْ فَلَكِ الْأَزْرَارِ مَطْلَعُهُ...
+
+[Verse 2]
+لَا أَكْذِبُ اللَّهَ ثَوْبُ الصَّبْرِ مُنْخَرِقٌ عَنِّي
+بِفُرْقَتِهِ لَـٰكِنْ أُرَقِّعُهُ...
+إِنِّي أُوَسِّعُ عُذْرِي فِي جِنَايَتِهِ
+بِالْبَيْنِ عَنْهُ وَجُرْمِي لَا يُوَسِّعُهُ...
+أُعْطِيتُ مُلْكًا فَلَمْ أُحْسِنْ سِيَاسَتَهُ
+وَكُلُّ مَنْ لَا يَسُوسُ الْمُلْكَ يُخْلَعُهُ...
+وَمَنْ غَدَا لَابِسًا ثَوْبَ النَّعِيمِ
+بِلَا شُكْرٍ عَلَيْهِ فَإِنَّ اللَّهَ يَنْزِعُهُ...
+
+[Chorus]
+أَسْتَوْدِعُ اللَّهَ فِي بَغْدَادَ لِي قَمَرًا
+بِالْكَرْخِ مِنْ فَلَكِ الْأَزْرَارِ مَطْلَعُهُ...
+
+[Outro | deep male vocals | clean electric guitar]
+وَمَنْ غَدَا لَابِسًا ثَوْبَ النَّعِيمِ
+بِلَا شُكْرٍ عَلَيْهِ فَإِنَّ اللَّهَ يَنْزِعُهُ... --request-option style=arabmaqamrock, classical arabic, melismatic, microtonal ornaments, belting, tarab, emotive expressive delivery, symphonic metal, powerful operatic performance, rhythm guitar, epic, clear enunciation, vocal-forward mix, crisp consonants, audiophile, call and response, backing vocals, Maqam Hijaz, mood: "yearning, deep sorrow, lamenting" --request-option cot=off --request-option semantic_max_tokens=6750 --seed 541029638 --out /content/arabmaqamrock/out/20261027-125131_pragmatic-grasshopper_ibn_zuraiq_formatted/02-استيداع-قمر-بغداد-ولوعة-الوداع_541029638.wav --log"
+	User time (seconds): 613.70
+	System time (seconds): 19.60
+	Percent of CPU this job got: 109%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:36.56
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7710556
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 57424
+	Minor (reclaiming a frame) page faults: 6863431
+	Voluntary context switches: 69238
+	Involuntary context switches: 168275
+	Swaps: 0
+	File system inputs: 14263456
+	File system outputs: 92952
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

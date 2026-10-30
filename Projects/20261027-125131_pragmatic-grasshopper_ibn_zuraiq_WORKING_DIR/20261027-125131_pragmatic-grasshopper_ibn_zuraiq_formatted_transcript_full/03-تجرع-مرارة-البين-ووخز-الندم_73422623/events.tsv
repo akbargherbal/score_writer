@@ -1,0 +1,654 @@
+time	global_subbeat	fields
+0.0	0	timestamp=0.0; rhythm=meter:(1, 8),eighth_position:0; structure=intro; key=D#:minor; chord=D#:min
+0.22	2	timestamp=0.22; rhythm=meter:(2, 4),eighth_position:0; chord=D#:min
+1.16	6	timestamp=1.16; rhythm=eighth_position:2; melody=[pitch=63:track=1:dur_bin=1:dur_steps=2]
+1.63	8	melody=[pitch=66:track=1:dur_bin=1:dur_steps=2]
+2.1	10	timestamp=2.1; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=65:track=1:dur_bin=1:dur_steps=2]
+2.56	12	melody=[pitch=68:track=1:dur_bin=1:dur_steps=2]
+3.02	14	timestamp=3.02; rhythm=eighth_position:2; melody=[pitch=66:track=1:dur_bin=1:dur_steps=2]
+3.49	16	melody=[pitch=65:track=1:dur_bin=1:dur_steps=2]
+3.96	18	timestamp=3.96; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=70:track=1:dur_bin=5:dur_steps=8]
+4.89	22	timestamp=4.89; rhythm=eighth_position:2
+5.81	26	timestamp=5.81; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=70:track=1:dur_bin=2:dur_steps=3]
+6.5	29	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+6.73	30	timestamp=6.73; rhythm=eighth_position:2; melody=[pitch=68:track=1:dur_bin=1:dur_steps=2]
+7.195	32	melody=[pitch=66:track=1:dur_bin=1:dur_steps=2]
+7.66	34	timestamp=7.66; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=66:track=1:dur_bin=1:dur_steps=2]
+8.120000000000001	36	melody=[pitch=75:track=1:dur_bin=3:dur_steps=4]
+8.58	38	timestamp=8.58; rhythm=eighth_position:2
+9.27	41	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+9.5	42	timestamp=9.5; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+9.74	43	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+9.98	44	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+10.22	45	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+10.46	46	timestamp=10.46; rhythm=eighth_position:2; melody=[pitch=68:track=1:dur_bin=1:dur_steps=2]
+10.885000000000002	48	melody=[pitch=63:track=1:dur_bin=1:dur_steps=2]
+11.31	50	timestamp=11.31; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=65:track=1:dur_bin=5:dur_steps=8]
+12.27	54	timestamp=12.27; rhythm=eighth_position:2
+13.19	58	timestamp=13.19; rhythm=eighth_position:0; chord=C#:maj
+13.655	60	melody=[pitch=66:track=1:dur_bin=0:dur_steps=1]
+13.8875	61	melody=[pitch=68:track=1:dur_bin=0:dur_steps=1]
+14.12	62	timestamp=14.12; rhythm=eighth_position:2; melody=[pitch=66:track=1:dur_bin=1:dur_steps=2]
+14.6	64	melody=[pitch=65:track=1:dur_bin=1:dur_steps=2]
+15.08	66	timestamp=15.08; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=63:track=1:dur_bin=1:dur_steps=2]
+15.52	68	melody=[pitch=63:track=1:dur_bin=0:dur_steps=1]
+15.74	69	melody=[pitch=63:track=1:dur_bin=0:dur_steps=1]
+15.96	70	timestamp=15.96; rhythm=eighth_position:2; melody=[pitch=63:track=1:dur_bin=1:dur_steps=2]
+16.42	72	melody=[pitch=63:track=1:dur_bin=0:dur_steps=1]
+16.65	73	melody=[pitch=63:track=1:dur_bin=0:dur_steps=1]
+16.88	74	timestamp=16.88; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=63:track=1:dur_bin=1:dur_steps=2]
+17.34	76	melody=[pitch=63:track=1:dur_bin=0:dur_steps=1]
+17.57	77	melody=[pitch=63:track=1:dur_bin=0:dur_steps=1]
+17.8	78	timestamp=17.8; rhythm=eighth_position:2; melody=[pitch=63:track=1:dur_bin=1:dur_steps=2]
+18.23	80	melody=[pitch=58:track=0:dur_bin=1:dur_steps=2]
+18.66	82	timestamp=18.66; rhythm=eighth_position:0; structure=verse; chord=D#:min; melody=[pitch=63:track=0:dur_bin=1:dur_steps=2]
+19.134999999999998	84	melody=[pitch=63:track=0:dur_bin=0:dur_steps=1]
+19.3725	85	melody=[pitch=63:track=0:dur_bin=1:dur_steps=2]
+19.61	86	timestamp=19.61; rhythm=eighth_position:2
+19.8275	87	melody=[pitch=63:track=0:dur_bin=1:dur_steps=2]
+20.2625	89	melody=[pitch=65:track=0:dur_bin=0:dur_steps=1]
+20.48	90	timestamp=20.48; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=66:track=0:dur_bin=1:dur_steps=2]
+20.93	92	melody=[pitch=63:track=0:dur_bin=1:dur_steps=2]
+21.38	94	timestamp=21.38; rhythm=eighth_position:2; melody=[pitch=63:track=0:dur_bin=1:dur_steps=2]
+21.84	96	melody=[pitch=65:track=0:dur_bin=1:dur_steps=2]
+22.3	98	timestamp=22.3; rhythm=eighth_position:0; chord=G#:min; melody=[pitch=66:track=0:dur_bin=0:dur_steps=1]
+22.5425	99	melody=[pitch=66:track=0:dur_bin=1:dur_steps=2]
+23.0275	101	melody=[pitch=68:track=0:dur_bin=0:dur_steps=1]
+23.27	102	timestamp=23.27; rhythm=eighth_position:2; melody=[pitch=66:track=0:dur_bin=1:dur_steps=2]
+23.705	104	melody=[pitch=71:track=0:dur_bin=1:dur_steps=2]
+24.14	106	timestamp=24.14; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=68:track=0:dur_bin=3:dur_steps=4]
+25.08	110	timestamp=25.08; rhythm=eighth_position:2
+25.732499999999998	113	melody=[pitch=65:track=0:dur_bin=0:dur_steps=1]
+25.95	114	timestamp=25.95; rhythm=eighth_position:0; chord=A#:maj; melody=[pitch=65:track=0:dur_bin=1:dur_steps=2]
+26.395	116	melody=[pitch=65:track=0:dur_bin=1:dur_steps=2]
+26.84	118	timestamp=26.84; rhythm=eighth_position:2; melody=[pitch=65:track=0:dur_bin=1:dur_steps=2]
+27.3	120	melody=[pitch=63:track=0:dur_bin=0:dur_steps=1]
+27.53	121	melody=[pitch=61:track=0:dur_bin=0:dur_steps=1]
+27.76	122	timestamp=27.76; rhythm=eighth_position:0; chord=A#:maj; melody=[pitch=59:track=0:dur_bin=2:dur_steps=3]
+28.45	125	melody=[pitch=59:track=0:dur_bin=0:dur_steps=1]
+28.68	126	timestamp=28.68; rhythm=eighth_position:2; melody=[pitch=61:track=0:dur_bin=1:dur_steps=2]
+29.16	128	melody=[pitch=65:track=0:dur_bin=1:dur_steps=2]
+29.64	130	timestamp=29.64; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=63:track=0:dur_bin=3:dur_steps=4]
+30.6	134	timestamp=30.6; rhythm=eighth_position:2
+31.48	138	timestamp=31.48; rhythm=eighth_position:0; chord=D#:min
+32.41	142	timestamp=32.41; rhythm=eighth_position:2
+32.864999999999995	144	melody=[pitch=58:track=0:dur_bin=1:dur_steps=2]
+33.32	146	timestamp=33.32; rhythm=eighth_position:0; structure=verse; chord=D#:min; melody=[pitch=63:track=0:dur_bin=1:dur_steps=2]
+33.745000000000005	148	melody=[pitch=63:track=0:dur_bin=0:dur_steps=1]
+33.9575	149	melody=[pitch=63:track=0:dur_bin=1:dur_steps=2]
+34.17	150	timestamp=34.17; rhythm=eighth_position:2
+34.405	151	melody=[pitch=63:track=0:dur_bin=1:dur_steps=2]
+34.875	153	melody=[pitch=65:track=0:dur_bin=0:dur_steps=1]
+35.11	154	timestamp=35.11; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=66:track=0:dur_bin=1:dur_steps=2]
+35.535	156	melody=[pitch=63:track=0:dur_bin=1:dur_steps=2]
+35.96	158	timestamp=35.96; rhythm=eighth_position:2; melody=[pitch=63:track=0:dur_bin=1:dur_steps=2]
+36.43	160	melody=[pitch=65:track=0:dur_bin=1:dur_steps=2]
+36.9	162	timestamp=36.9; rhythm=eighth_position:0; chord=G#:min; melody=[pitch=66:track=0:dur_bin=0:dur_steps=1]
+37.1325	163	melody=[pitch=66:track=0:dur_bin=1:dur_steps=2]
+37.5975	165	melody=[pitch=68:track=0:dur_bin=0:dur_steps=1]
+37.83	166	timestamp=37.83; rhythm=eighth_position:2; melody=[pitch=66:track=0:dur_bin=1:dur_steps=2]
+38.239999999999995	168	melody=[pitch=71:track=0:dur_bin=1:dur_steps=2]
+38.65	170	timestamp=38.65; rhythm=eighth_position:0; chord=G#:min; melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+38.885	171	melody=[pitch=68:track=0:dur_bin=2:dur_steps=3]
+39.59	174	timestamp=39.59; rhythm=eighth_position:2
+40.28	177	melody=[pitch=68:track=0:dur_bin=0:dur_steps=1]
+40.51	178	timestamp=40.51; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+40.965	180	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+41.42	182	timestamp=41.42; rhythm=eighth_position:2; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+41.905	184	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+42.1475	185	melody=[pitch=71:track=0:dur_bin=0:dur_steps=1]
+42.39	186	timestamp=42.39; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=71:track=0:dur_bin=2:dur_steps=3]
+43.065	189	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+43.29	190	timestamp=43.29; rhythm=eighth_position:2; melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+43.525	191	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+43.76	192	melody=[pitch=71:track=0:dur_bin=0:dur_steps=1]
+43.995	193	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+44.23	194	timestamp=44.23; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=70:track=0:dur_bin=3:dur_steps=4]
+45.0	198	timestamp=45.0; rhythm=eighth_position:2
+45.9	202	timestamp=45.9; rhythm=eighth_position:0; chord=D#:min
+46.87	206	timestamp=46.87; rhythm=eighth_position:2
+47.095	207	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+47.545	209	melody=[pitch=75:track=0:dur_bin=2:dur_steps=3]
+47.77	210	timestamp=47.77; rhythm=eighth_position:0; structure=verse; chord=D#:min
+48.24	212	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+48.475	213	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+48.71	214	timestamp=48.71; rhythm=eighth_position:2
+48.94	215	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+49.400000000000006	217	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+49.63	218	timestamp=49.63; rhythm=eighth_position:0; chord=D#:min
+49.855000000000004	219	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+50.305	221	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+50.53	222	timestamp=50.53; rhythm=eighth_position:2
+50.755	223	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+51.205	225	melody=[pitch=71:track=0:dur_bin=1:dur_steps=2]
+51.43	226	timestamp=51.43; rhythm=eighth_position:0; chord=G#:min
+51.665	227	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+52.135	229	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+52.37	230	timestamp=52.37; rhythm=eighth_position:2; melody=[pitch=73:track=0:dur_bin=3:dur_steps=4]
+53.19	234	timestamp=53.19; rhythm=eighth_position:0; chord=G#:min
+54.11	238	timestamp=54.11; rhythm=eighth_position:2
+54.3375	239	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+54.792500000000004	241	melody=[pitch=77:track=0:dur_bin=2:dur_steps=3]
+55.02	242	timestamp=55.02; rhythm=eighth_position:0; chord=C#:maj
+55.425	244	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+55.6275	245	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+55.83	246	timestamp=55.83; rhythm=eighth_position:2
+56.052499999999995	247	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+56.4975	249	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+56.72	250	timestamp=56.72; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+57.19	252	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+57.66	254	timestamp=57.66; rhythm=eighth_position:2; melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+58.125	256	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+58.3575	257	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+58.59	258	timestamp=58.59; rhythm=eighth_position:0; chord=D#:min
+58.815000000000005	259	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+59.040000000000006	260	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+59.49	262	timestamp=59.49; rhythm=eighth_position:2; melody=[pitch=75:track=0:dur_bin=3:dur_steps=4]
+60.31	266	timestamp=60.31; rhythm=eighth_position:0; chord=D#:min
+61.08	270	timestamp=61.08; rhythm=eighth_position:2
+61.275	271	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+61.47	272	melody=[pitch=75:track=0:dur_bin=2:dur_steps=3]
+61.86	274	timestamp=61.86; rhythm=eighth_position:0; chord=D#:min
+62.0925	275	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+62.325	276	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+62.79	278	timestamp=62.79; rhythm=eighth_position:2; melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+63.015	279	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+63.464999999999996	281	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+63.69	282	timestamp=63.69; rhythm=eighth_position:0; chord=D#:min
+63.915	283	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+64.36500000000001	285	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+64.59	286	timestamp=64.59; rhythm=eighth_position:2
+64.80000000000001	287	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+65.22	289	melody=[pitch=71:track=0:dur_bin=1:dur_steps=2]
+65.43	290	timestamp=65.43; rhythm=eighth_position:0; chord=G#:min
+65.655	291	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+66.105	293	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+66.33	294	timestamp=66.33; rhythm=eighth_position:2; melody=[pitch=73:track=0:dur_bin=3:dur_steps=4]
+67.27	298	timestamp=67.27; rhythm=eighth_position:0; chord=G#:min
+68.15	302	timestamp=68.15; rhythm=eighth_position:2
+68.3675	303	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+68.8025	305	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+69.02	306	timestamp=69.02; rhythm=eighth_position:0; chord=C#:maj
+69.2525	307	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+69.485	308	melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+69.95	310	timestamp=69.95; rhythm=eighth_position:2; melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+70.44	312	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+70.685	313	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+70.93	314	timestamp=70.93; rhythm=eighth_position:0; chord=C#:maj
+71.135	315	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+71.545	317	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+71.75	318	timestamp=71.75; rhythm=eighth_position:2
+71.96000000000001	319	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+72.17	320	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+72.59	322	timestamp=72.59; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+72.8075	323	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+73.025	324	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+73.24249999999999	325	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+73.46	326	timestamp=73.46; rhythm=eighth_position:2
+74.39	330	timestamp=74.39; rhythm=eighth_position:0; chord=D#:min
+75.29	334	timestamp=75.29; rhythm=eighth_position:2
+75.52250000000001	335	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+75.9875	337	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+76.22	338	timestamp=76.22; rhythm=eighth_position:0; structure=verse; chord=D#:min
+76.4425	339	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+76.66499999999999	340	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+76.8875	341	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+77.11	342	timestamp=77.11; rhythm=eighth_position:2; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+77.56	344	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+77.785	345	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+78.01	346	timestamp=78.01; rhythm=eighth_position:0; chord=D#:min
+78.655	349	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+78.87	350	timestamp=78.87; rhythm=eighth_position:2
+79.09	351	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+79.53	353	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+79.75	354	timestamp=79.75; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+80.205	356	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+80.4325	357	melody=[pitch=71:track=0:dur_bin=0:dur_steps=1]
+80.66	358	timestamp=80.66; rhythm=eighth_position:2; melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+80.8925	359	melody=[pitch=68:track=0:dur_bin=0:dur_steps=1]
+81.59	362	timestamp=81.59; rhythm=eighth_position:0; chord=C#:maj
+82.53	366	timestamp=82.53; rhythm=eighth_position:2
+82.725	367	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+83.11500000000001	369	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+83.31	370	timestamp=83.31; rhythm=eighth_position:0; chord=B:maj
+83.5325	371	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+83.755	372	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+84.2	374	timestamp=84.2; rhythm=eighth_position:2; melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+84.67	376	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+84.905	377	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+85.14	378	timestamp=85.14; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+85.565	380	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+85.99	382	timestamp=85.99; rhythm=eighth_position:2; melody=[pitch=71:track=0:dur_bin=1:dur_steps=2]
+86.41999999999999	384	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+86.63499999999999	385	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+86.85	386	timestamp=86.85; rhythm=eighth_position:0; chord=G#:min
+87.085	387	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+87.32	388	melody=[pitch=71:track=0:dur_bin=0:dur_steps=1]
+87.555	389	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+87.79	390	timestamp=87.79; rhythm=eighth_position:2; melody=[pitch=68:track=0:dur_bin=1:dur_steps=2]
+88.63	394	timestamp=88.63; rhythm=eighth_position:0; chord=G#:min
+89.46	398	timestamp=89.46; rhythm=eighth_position:2
+89.6625	399	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+90.0675	401	melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+90.27	402	timestamp=90.27; rhythm=eighth_position:0; chord=C#:maj
+90.4825	403	melody=[pitch=80:track=0:dur_bin=0:dur_steps=1]
+90.695	404	melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+91.12	406	timestamp=91.12; rhythm=eighth_position:2; melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+91.535	408	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+91.7425	409	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+91.95	410	timestamp=91.95; rhythm=eighth_position:0; chord=C#:maj
+92.16	411	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+92.58000000000001	413	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+92.79	414	timestamp=92.79; rhythm=eighth_position:2
+92.985	415	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+93.18	416	melody=[pitch=77:track=0:dur_bin=2:dur_steps=3]
+93.57	418	timestamp=93.57; rhythm=eighth_position:0; chord=B:maj
+93.785	419	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+94.0	420	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+94.215	421	melody=[pitch=75:track=0:dur_bin=2:dur_steps=3]
+94.43	422	timestamp=94.43; rhythm=eighth_position:2
+95.28	426	timestamp=95.28; rhythm=eighth_position:0; chord=B:maj
+96.18	430	timestamp=96.18; rhythm=eighth_position:2
+96.3725	431	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+96.565	432	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+96.95	434	timestamp=96.95; rhythm=eighth_position:0; chord=A#:min; melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+97.1825	435	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+97.6475	437	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+97.88	438	timestamp=97.88; rhythm=eighth_position:2
+98.11749999999999	439	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+98.35499999999999	440	melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+98.83	442	timestamp=98.83; rhythm=eighth_position:0; chord=A#:min; melody=[pitch=82:track=0:dur_bin=1:dur_steps=2]
+99.275	444	melody=[pitch=82:track=0:dur_bin=1:dur_steps=2]
+99.72	446	timestamp=99.72; rhythm=eighth_position:2; melody=[pitch=82:track=0:dur_bin=0:dur_steps=1]
+99.9225	447	melody=[pitch=85:track=0:dur_bin=2:dur_steps=3]
+100.53	450	timestamp=100.53; rhythm=eighth_position:0; chord=G#:min; melody=[pitch=83:track=0:dur_bin=0:dur_steps=1]
+100.765	451	melody=[pitch=82:track=0:dur_bin=0:dur_steps=1]
+101.0	452	melody=[pitch=82:track=0:dur_bin=5:dur_steps=8]
+101.47	454	timestamp=101.47; rhythm=eighth_position:2
+102.33	458	timestamp=102.33; rhythm=eighth_position:0; chord=A#:maj
+103.31	462	timestamp=103.31; rhythm=eighth_position:2
+103.77000000000001	464	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+104.23	466	timestamp=104.23; rhythm=eighth_position:0; structure=chorus; chord=D#:min; melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+104.67500000000001	468	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+104.89750000000001	469	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+105.12	470	timestamp=105.12; rhythm=eighth_position:2
+105.3375	471	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+105.555	472	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+105.7725	473	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+105.99	474	timestamp=105.99; rhythm=eighth_position:0; chord=D#:min
+106.19999999999999	475	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+106.62	477	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+106.83	478	timestamp=106.83; rhythm=eighth_position:2
+107.0575	479	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+107.285	480	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+107.74	482	timestamp=107.74; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+108.185	484	melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+108.63	486	timestamp=108.63; rhythm=eighth_position:2; melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+108.83	487	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+109.03	488	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+109.43	490	timestamp=109.43; rhythm=eighth_position:0; chord=C#:maj
+110.33	494	timestamp=110.33; rhythm=eighth_position:2
+110.545	495	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+110.75999999999999	496	melody=[pitch=77:track=0:dur_bin=2:dur_steps=3]
+111.19	498	timestamp=111.19; rhythm=eighth_position:0; chord=B:maj
+111.41	499	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+111.63	500	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+111.85	501	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+112.07	502	timestamp=112.07; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+112.49	504	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+112.69999999999999	505	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+112.91	506	timestamp=112.91; rhythm=eighth_position:2; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+113.365	508	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+113.5925	509	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+113.82	510	timestamp=113.82; rhythm=eighth_position:0; chord=G#:min
+114.04249999999999	511	melody=[pitch=71:track=0:dur_bin=1:dur_steps=2]
+114.4875	513	melody=[pitch=71:track=0:dur_bin=1:dur_steps=2]
+114.71	514	timestamp=114.71; rhythm=eighth_position:2
+114.92999999999999	515	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+115.37	517	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+115.59	518	timestamp=115.59; rhythm=eighth_position:0; chord=D#:min
+115.8175	519	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+116.045	520	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+116.5	522	timestamp=116.5; rhythm=eighth_position:2; melody=[pitch=75:track=0:dur_bin=3:dur_steps=4]
+117.39	526	timestamp=117.39; rhythm=eighth_position:0; chord=D#:min
+118.28	530	timestamp=118.28; rhythm=eighth_position:2
+119.06	534	timestamp=119.06; rhythm=eighth_position:0; structure=interlude; chord=D#:min; melody=[pitch=70:track=1:dur_bin=1:dur_steps=2]
+119.485	536	melody=[pitch=78:track=1:dur_bin=1:dur_steps=2]
+119.91	538	timestamp=119.91; rhythm=eighth_position:2; melody=[pitch=77:track=1:dur_bin=1:dur_steps=2]
+120.36	540	melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+120.58500000000001	541	melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+120.81	542	timestamp=120.81; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+121.005	543	melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+121.2	544	melody=[pitch=78:track=1:dur_bin=1:dur_steps=2]
+121.59	546	timestamp=121.59; rhythm=eighth_position:2; melody=[pitch=77:track=1:dur_bin=1:dur_steps=2]
+122.01	548	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+122.22	549	melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+122.43	550	timestamp=122.43; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+122.64500000000001	551	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+122.86000000000001	552	melody=[pitch=78:track=1:dur_bin=1:dur_steps=2]
+123.29	554	timestamp=123.29; rhythm=eighth_position:2; melody=[pitch=77:track=1:dur_bin=1:dur_steps=2]
+123.72	556	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+123.935	557	melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+124.15	558	timestamp=124.15; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+124.39	559	melody=[pitch=78:track=1:dur_bin=0:dur_steps=1]
+124.63	560	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+124.87	561	melody=[pitch=77:track=1:dur_bin=0:dur_steps=1]
+125.11	562	timestamp=125.11; rhythm=eighth_position:2; melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+125.345	563	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+125.58	564	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+125.815	565	melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+126.05	566	timestamp=126.05; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+126.265	567	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+126.47999999999999	568	melody=[pitch=77:track=1:dur_bin=1:dur_steps=2]
+126.91	570	timestamp=126.91; rhythm=eighth_position:2; melody=[pitch=75:track=1:dur_bin=1:dur_steps=2]
+127.31	572	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+127.50999999999999	573	melody=[pitch=77:track=1:dur_bin=0:dur_steps=1]
+127.71	574	timestamp=127.71; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+127.9225	575	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+128.135	576	melody=[pitch=77:track=1:dur_bin=1:dur_steps=2]
+128.56	578	timestamp=128.56; rhythm=eighth_position:2; melody=[pitch=75:track=1:dur_bin=1:dur_steps=2]
+129.03	580	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+129.265	581	melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+129.5	582	timestamp=129.5; rhythm=eighth_position:0; chord=D#:min
+130.43	586	timestamp=130.43; rhythm=eighth_position:2
+131.32	590	timestamp=131.32; rhythm=eighth_position:0; chord=D#:min
+132.17	594	timestamp=132.17; rhythm=eighth_position:2
+132.57999999999998	596	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+132.785	597	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+132.99	598	timestamp=132.99; rhythm=eighth_position:0; structure=verse; chord=D#:min
+133.24	599	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+133.49	600	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+133.99	602	timestamp=133.99; rhythm=eighth_position:2; melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+134.38	604	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+134.77	606	timestamp=134.77; rhythm=eighth_position:0; chord=D#:min
+134.995	607	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+135.445	609	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+135.67	610	timestamp=135.67; rhythm=eighth_position:2
+135.89999999999998	611	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+136.13	612	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+136.59	614	timestamp=136.59; rhythm=eighth_position:0; chord=G#:min; melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+136.82	615	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+137.05	616	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+137.28	617	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+137.51	618	timestamp=137.51; rhythm=eighth_position:2; melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+138.46	622	timestamp=138.46; rhythm=eighth_position:0; chord=G#:min
+139.31	626	timestamp=139.31; rhythm=eighth_position:2
+139.53	627	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+139.75	628	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+140.19	630	timestamp=140.19; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+140.425	631	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+140.89499999999998	633	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+141.13	634	timestamp=141.13; rhythm=eighth_position:2
+141.375	635	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+141.62	636	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+142.11	638	timestamp=142.11; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+142.34	639	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+142.8	641	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+143.03	642	timestamp=143.03; rhythm=eighth_position:2
+143.255	643	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+143.48000000000002	644	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+143.93	646	timestamp=143.93; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+144.16	647	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+144.39	648	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+144.85	650	timestamp=144.85; rhythm=eighth_position:2
+145.63	654	timestamp=145.63; rhythm=eighth_position:0; chord=D#:min
+146.55	658	timestamp=146.55; rhythm=eighth_position:2
+146.76500000000001	659	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+147.195	661	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+147.41	662	timestamp=147.41; rhythm=eighth_position:0; chord=D#:min
+147.605	663	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+147.8	664	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+148.19	666	timestamp=148.19; rhythm=eighth_position:2; melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+148.41	667	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+148.63	668	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+149.07	670	timestamp=149.07; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+149.76	673	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+149.99	674	timestamp=149.99; rhythm=eighth_position:2
+150.195	675	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+150.4	676	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+150.81	678	timestamp=150.81; rhythm=eighth_position:0; chord=G#:min; melody=[pitch=80:track=0:dur_bin=0:dur_steps=1]
+151.03	679	melody=[pitch=82:track=0:dur_bin=0:dur_steps=1]
+151.25	680	melody=[pitch=83:track=0:dur_bin=0:dur_steps=1]
+151.47	681	melody=[pitch=83:track=0:dur_bin=1:dur_steps=2]
+151.69	682	timestamp=151.69; rhythm=eighth_position:2
+151.905	683	melody=[pitch=82:track=0:dur_bin=0:dur_steps=1]
+152.12	684	melody=[pitch=80:track=0:dur_bin=0:dur_steps=1]
+152.55	686	timestamp=152.55; rhythm=eighth_position:0; chord=G#:min
+153.47	690	timestamp=153.47; rhythm=eighth_position:2
+153.67000000000002	691	melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+154.07	693	melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+154.27	694	timestamp=154.27; rhythm=eighth_position:0; chord=C#:maj
+154.495	695	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+154.72	696	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+155.17	698	timestamp=155.17; rhythm=eighth_position:2; melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+155.42	699	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+155.67	700	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+156.17	702	timestamp=156.17; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+156.62	704	melody=[pitch=73:track=0:dur_bin=2:dur_steps=3]
+157.07	706	timestamp=157.07; rhythm=eighth_position:2
+157.29	707	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+157.51	708	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+157.95	710	timestamp=157.95; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+158.19	711	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+158.43	712	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+158.91	714	timestamp=158.91; rhythm=eighth_position:2
+159.77	718	timestamp=159.77; rhythm=eighth_position:0; chord=D#:min
+160.61	722	timestamp=160.61; rhythm=eighth_position:2
+160.8325	723	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+161.2775	725	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+161.5	726	timestamp=161.5; rhythm=eighth_position:0; structure=verse; chord=D#:min
+161.7225	727	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+161.945	728	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+162.39	730	timestamp=162.39; rhythm=eighth_position:2; melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+162.82999999999998	732	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+163.05	733	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+163.27	734	timestamp=163.27; rhythm=eighth_position:0; chord=D#:min
+163.49	735	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+163.93	737	melody=[pitch=82:track=0:dur_bin=1:dur_steps=2]
+164.15	738	timestamp=164.15; rhythm=eighth_position:2
+164.37	739	melody=[pitch=82:track=0:dur_bin=0:dur_steps=1]
+164.59	740	melody=[pitch=82:track=0:dur_bin=1:dur_steps=2]
+165.03	742	timestamp=165.03; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+165.245	743	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+165.45999999999998	744	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+165.89	746	timestamp=165.89; rhythm=eighth_position:2
+166.10999999999999	747	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+166.55	749	melody=[pitch=80:track=0:dur_bin=3:dur_steps=4]
+166.77	750	timestamp=166.77; rhythm=eighth_position:0; chord=C#:maj
+167.4375	753	melody=[pitch=82:track=0:dur_bin=0:dur_steps=1]
+167.66	754	timestamp=167.66; rhythm=eighth_position:2; melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+167.9025	755	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+168.14499999999998	756	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+168.3875	757	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+168.63	758	timestamp=168.63; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+169.07	760	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+169.29	761	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+169.51	762	timestamp=169.51; rhythm=eighth_position:2; melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+170.11	765	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+170.31	766	timestamp=170.31; rhythm=eighth_position:0; chord=G#:min
+170.53	767	melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+170.97	769	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+171.19	770	timestamp=171.19; rhythm=eighth_position:2; melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+171.63	772	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+171.85	773	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+172.07	774	timestamp=172.07; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+172.97	778	timestamp=172.97; rhythm=eighth_position:2
+173.89	782	timestamp=173.89; rhythm=eighth_position:0; chord=D#:min
+174.78	786	timestamp=174.78; rhythm=eighth_position:2
+175.01	787	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+175.47	789	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+175.7	790	timestamp=175.7; rhythm=eighth_position:0; chord=D#:min
+175.9325	791	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+176.165	792	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+176.63	794	timestamp=176.63; rhythm=eighth_position:2; melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+177.11	796	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+177.35	797	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+177.59	798	timestamp=177.59; rhythm=eighth_position:0; chord=D#:min
+177.8	799	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+178.22	801	melody=[pitch=82:track=0:dur_bin=1:dur_steps=2]
+178.43	802	timestamp=178.43; rhythm=eighth_position:2
+178.63	803	melody=[pitch=82:track=0:dur_bin=0:dur_steps=1]
+178.82999999999998	804	melody=[pitch=82:track=0:dur_bin=0:dur_steps=1]
+179.03	805	melody=[pitch=80:track=0:dur_bin=0:dur_steps=1]
+179.23	806	timestamp=179.23; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=80:track=0:dur_bin=0:dur_steps=1]
+179.44	807	melody=[pitch=80:track=0:dur_bin=0:dur_steps=1]
+179.64999999999998	808	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+179.85999999999999	809	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+180.07	810	timestamp=180.07; rhythm=eighth_position:2; melody=[pitch=77:track=0:dur_bin=2:dur_steps=3]
+180.76	813	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+180.99	814	timestamp=180.99; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+181.44	816	melody=[pitch=82:track=0:dur_bin=1:dur_steps=2]
+181.89	818	timestamp=181.89; rhythm=eighth_position:2; melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+182.10999999999999	819	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+182.55	821	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+182.77	822	timestamp=182.77; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+183.23000000000002	824	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+183.46	825	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+183.69	826	timestamp=183.69; rhythm=eighth_position:2
+183.9325	827	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+184.4175	829	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+184.66	830	timestamp=184.66; rhythm=eighth_position:0; chord=G#:min; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+185.32	833	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+185.54	834	timestamp=185.54; rhythm=eighth_position:2
+185.7625	835	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+186.2075	837	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+186.43	838	timestamp=186.43; rhythm=eighth_position:0; chord=A#:min; melody=[pitch=82:track=0:dur_bin=1:dur_steps=2]
+186.87	840	melody=[pitch=83:track=0:dur_bin=0:dur_steps=1]
+187.09	841	melody=[pitch=82:track=0:dur_bin=0:dur_steps=1]
+187.31	842	timestamp=187.31; rhythm=eighth_position:2; melody=[pitch=82:track=0:dur_bin=0:dur_steps=1]
+187.54	843	melody=[pitch=82:track=0:dur_bin=4:dur_steps=6]
+188.23	846	timestamp=188.23; rhythm=eighth_position:0; chord=A#:min
+189.11	850	timestamp=189.11; rhythm=eighth_position:2; melody=[pitch=87:track=0:dur_bin=1:dur_steps=2]
+189.55	852	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+189.99	854	timestamp=189.99; rhythm=eighth_position:0; structure=chorus; chord=D#:min; melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+190.43	856	melody=[pitch=78:track=0:dur_bin=0:dur_steps=1]
+190.65	857	melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+190.87	858	timestamp=190.87; rhythm=eighth_position:2
+191.09	859	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+191.31	860	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+191.53	861	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+191.75	862	timestamp=191.75; rhythm=eighth_position:0; chord=D#:min
+191.97	863	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+192.41	865	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+192.63	866	timestamp=192.63; rhythm=eighth_position:2
+192.86	867	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+193.09	868	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+193.55	870	timestamp=193.55; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=78:track=0:dur_bin=1:dur_steps=2]
+193.99	872	melody=[pitch=80:track=0:dur_bin=1:dur_steps=2]
+194.43	874	timestamp=194.43; rhythm=eighth_position:2; melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+194.65	875	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+194.87	876	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+195.31	878	timestamp=195.31; rhythm=eighth_position:0; chord=C#:maj
+196.19	882	timestamp=196.19; rhythm=eighth_position:2
+196.41	883	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+196.63	884	melody=[pitch=77:track=0:dur_bin=2:dur_steps=3]
+197.07	886	timestamp=197.07; rhythm=eighth_position:0; chord=B:maj
+197.3	887	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+197.53	888	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+197.76	889	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+197.99	890	timestamp=197.99; rhythm=eighth_position:2; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+198.45	892	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+198.68	893	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+198.91	894	timestamp=198.91; rhythm=eighth_position:0; chord=G#:min
+199.14	895	melody=[pitch=71:track=0:dur_bin=1:dur_steps=2]
+199.60000000000002	897	melody=[pitch=71:track=0:dur_bin=1:dur_steps=2]
+199.83	898	timestamp=199.83; rhythm=eighth_position:2
+200.05	899	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+200.49	901	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+200.71	902	timestamp=200.71; rhythm=eighth_position:0; chord=A#:min
+200.93	903	melody=[pitch=77:track=0:dur_bin=0:dur_steps=1]
+201.15	904	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+201.59	906	timestamp=201.59; rhythm=eighth_position:2; melody=[pitch=75:track=0:dur_bin=6:dur_steps=12]
+202.47	910	timestamp=202.47; rhythm=eighth_position:0; chord=A#:min
+203.35	914	timestamp=203.35; rhythm=eighth_position:2
+204.22	918	timestamp=204.22; rhythm=eighth_position:0; structure=interlude; chord=D#:min; melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+204.4475	919	melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+204.675	920	melody=[pitch=78:track=1:dur_bin=0:dur_steps=1]
+204.9025	921	melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+205.13	922	timestamp=205.13; rhythm=eighth_position:2; melody=[pitch=77:track=1:dur_bin=0:dur_steps=1]
+205.35	923	melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+205.57	924	melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+205.79	925	melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+206.01	926	timestamp=206.01; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+206.23499999999999	927	melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+206.45999999999998	928	melody=[pitch=78:track=1:dur_bin=0:dur_steps=1]
+206.685	929	melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+206.91	930	timestamp=206.91; rhythm=eighth_position:2; melody=[pitch=77:track=1:dur_bin=0:dur_steps=1]
+207.12	931	melody=[pitch=70:track=1:dur_bin=0:dur_steps=1]
+207.32999999999998	932	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+207.54	933	melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+207.75	934	timestamp=207.75; rhythm=eighth_position:0; chord=B:maj
+207.96	935	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+208.17000000000002	936	melody=[pitch=78:track=1:dur_bin=0:dur_steps=1]
+208.38	937	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+208.59	938	timestamp=208.59; rhythm=eighth_position:2; melody=[pitch=77:track=1:dur_bin=0:dur_steps=1]
+208.81	939	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+209.03	940	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+209.25	941	melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+209.47	942	timestamp=209.47; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+209.7	943	melody=[pitch=78:track=1:dur_bin=0:dur_steps=1]
+209.93	944	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+210.16	945	melody=[pitch=77:track=1:dur_bin=0:dur_steps=1]
+210.39	946	timestamp=210.39; rhythm=eighth_position:2; melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+210.58999999999997	947	melody=[pitch=71:track=1:dur_bin=0:dur_steps=1]
+210.79	948	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+210.99	949	melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+211.19	950	timestamp=211.19; rhythm=eighth_position:0; chord=C#:maj
+211.4	951	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+211.61	952	melody=[pitch=77:track=1:dur_bin=0:dur_steps=1]
+211.82	953	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+212.03	954	timestamp=212.03; rhythm=eighth_position:2; melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+212.23000000000002	955	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+212.43	956	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+212.63	957	melody=[pitch=77:track=1:dur_bin=0:dur_steps=1]
+212.83	958	timestamp=212.83; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+213.04000000000002	959	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+213.25	960	melody=[pitch=77:track=1:dur_bin=0:dur_steps=1]
+213.45999999999998	961	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+213.67	962	timestamp=213.67; rhythm=eighth_position:2; melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+213.89	963	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+214.11	964	melody=[pitch=73:track=1:dur_bin=0:dur_steps=1]
+214.33	965	melody=[pitch=75:track=1:dur_bin=0:dur_steps=1]
+214.55	966	timestamp=214.55; rhythm=eighth_position:0; chord=D#:min
+215.43	970	timestamp=215.43; rhythm=eighth_position:2
+216.31	974	timestamp=216.31; rhythm=eighth_position:0; structure=outro; chord=D#:min; melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+216.73000000000002	976	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+217.15	978	timestamp=217.15; rhythm=eighth_position:2; melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+217.38	979	melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+217.84	981	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+218.07	982	timestamp=218.07; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+218.51	984	melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+218.95	986	timestamp=218.95; rhythm=eighth_position:2; melody=[pitch=70:track=0:dur_bin=1:dur_steps=2]
+219.41	988	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+219.64	989	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+219.87	990	timestamp=219.87; rhythm=eighth_position:0; chord=G#:min; melody=[pitch=68:track=0:dur_bin=0:dur_steps=1]
+220.32999999999998	992	melody=[pitch=68:track=0:dur_bin=0:dur_steps=1]
+220.56	993	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+220.79	994	timestamp=220.79; rhythm=eighth_position:2; melody=[pitch=71:track=0:dur_bin=3:dur_steps=4]
+221.67	998	timestamp=221.67; rhythm=eighth_position:0; chord=G#:min
+222.55	1002	timestamp=222.55; rhythm=eighth_position:2
+223.21	1005	melody=[pitch=68:track=0:dur_bin=0:dur_steps=1]
+223.43	1006	timestamp=223.43; rhythm=eighth_position:0; chord=C#:maj; melody=[pitch=68:track=0:dur_bin=1:dur_steps=2]
+223.87	1008	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+224.09	1009	melody=[pitch=71:track=0:dur_bin=1:dur_steps=2]
+224.31	1010	timestamp=224.31; rhythm=eighth_position:2
+224.54	1011	melody=[pitch=73:track=0:dur_bin=1:dur_steps=2]
+225.0	1013	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+225.23	1014	timestamp=225.23; rhythm=eighth_position:0; chord=A#:min; melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+226.15	1018	timestamp=226.15; rhythm=eighth_position:2
+226.3875	1019	melody=[pitch=70:track=0:dur_bin=0:dur_steps=1]
+226.625	1020	melody=[pitch=75:track=0:dur_bin=2:dur_steps=3]
+227.1	1022	timestamp=227.1; rhythm=eighth_position:0; chord=B:maj
+227.33249999999998	1023	melody=[pitch=73:track=0:dur_bin=0:dur_steps=1]
+227.565	1024	melody=[pitch=71:track=0:dur_bin=0:dur_steps=1]
+228.03	1026	timestamp=228.03; rhythm=eighth_position:2; melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+228.49	1028	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+228.95	1030	timestamp=228.95; rhythm=eighth_position:0; chord=B:maj; melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+229.43	1032	melody=[pitch=77:track=0:dur_bin=1:dur_steps=2]
+229.91	1034	timestamp=229.91; rhythm=eighth_position:2; chord=D#:min; melody=[pitch=75:track=0:dur_bin=1:dur_steps=2]
+230.39	1036	melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+230.87	1038	timestamp=230.87; rhythm=eighth_position:0; chord=D#:min; melody=[pitch=75:track=0:dur_bin=0:dur_steps=1]
+231.87	1042	timestamp=231.87; rhythm=eighth_position:2
+232.91	1046	timestamp=232.91; rhythm=eighth_position:0; chord=D#:min
+233.95	1050	timestamp=233.95; rhythm=eighth_position:2
+234.99	1054	timestamp=234.99; rhythm=eighth_position:0

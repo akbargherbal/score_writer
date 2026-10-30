@@ -1,0 +1,62 @@
+	Command being timed: "/content/arabmaqamrock/bin/audiocpp_cli --task gen --family yue2 --model /content/arabmaqamrock/models/Yue2-3B-GGUF --backend cuda --threads 8 --session-option yue2.model_gguf=yue2-3b-bf16.gguf --session-option yue2.vae_gguf=yue2-vae-f16.gguf --session-option yue2.ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors --session-option yue2.ar_lora_scale=1.0 --session-option yue2.nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors --session-option yue2.nar_lora_scale=1.0 --session-option yue2.attention=flash --lyrics ///***///
+[Intro | single clean guitar | close-mic'd, plate reverb, short decay]
+لَا تَعْذُلِيهِ فَإِنَّ الْعَذْلَ يُولِعُهُ
+قَدْ قُلْتِ حَقًّا وَلَـٰكِنْ لَيْسَ يَسْمَعُهُ...
+
+[Verse 1 | calm reflective vocals | muted rhythmic guitars and warm acoustic bass]
+لَا تَعْذُلِيهِ فَإِنَّ الْعَذْلَ يُولِعُهُ
+قَدْ قُلْتِ حَقًّا وَلَـٰكِنْ لَيْسَ يَسْمَعُهُ...
+جَاوَزْتِ فِي لَوْمِهِ حَدًّا أَضَرَّ بِهِ
+مِنْ حَيْثُ قَدَّرْتِ أَنَّ ٱلَّوۡمَ يَنْفَعُهُ...
+فَاسْتَعْمِلِي الرِّفْقَ فِي تَأْنِيبِهِ بَدَلًا مِنْ عَذْلِهِ
+فَهُوَ مُضْنَى الْقَلْبِ مُوجَعُهُ...
+قَدْ كَانَ مُضْطَلِعًا بِالْخَطْبِ يَحْمِلُهُ
+فَضُلِّعَتْ بِخُطُوبِ الْبَيْنِ أَضْلُعُهُ...
+يَكْفِيهِ مِنْ لَوْعَةِ التَّشْتِيتِ أَنَّ لَهُ
+مِنَ النَّوَى كُلَّ يَوْمٍ مَا يُرَوِّعُهُ...
+مَا آبَ مِنْ سَفَرٍ إِلَّا وَأَزْعَجَهُ
+رَأْيٌ إِلَى سَفَرٍ بِالرَّغْمِ يَزْمَعُهُ...
+كَأَنَّمَا هُوَ فِي حِلٍّ وَمُرْتَحَلٍ
+مُوَكَّلٌ بِفَضَاءِ اللَّهِ يَذْرَعُهُ...
+
+[Verse 2 | resonant earnest vocals | full orchestral build and strings swell — Nahawand]
+إِنَّ الزَّمَانَ أَرَاهُ فِي الرَّحِيلِ غِنًى
+وَلَوْ إِلَى السِّنْدِ أَضْحَى وَهْوَ يَزْمَعُهُ...
+تَأْبَى الْمَطَامِعُ إِلَّا أَنْ تُجَشِّمَهُ
+لِلرِّزْقِ كَدًّا وَكَمْ مِمَّنْ يُوَدِّعُهُ...
+وَمَا مُجَاهَدَةُ الْإِنْسَانِ تُوصِلُهُ رِزْقًا
+وَلَا دَعَةُ الْإِنْسَانِ تَقْطَعُهُ...
+قَدْ وَزَّعَ اللَّهُ بَيْنَ الْخَلْقِ رِزْقَهُمُ
+لَمْ يَخْلُقِ اللَّهُ مِنْ خَلْقٍ يُضَيِّعُهُ...
+لَـٰكِنَّهُمْ كُلِّفُوا حِرْصًا فَلَسْتَ تَرَى مُسْتَرْزِقًا
+وَسِوَى الْغَايَاتِ تُقْنِعُهُ...
+وَالْحِرْصُ فِي الرِّزْقِ وَالْأَرْزَاقُ قَدْ قُسِمَتْ بَغْيٌ
+أَلَا إِنَّ بَغْيَ الْمَرْءِ يَصْرَعُهُ...
+وَالدَّهْرُ يُعْطِي الْفَتَى مِنْ حَيْثُ يَمْنَعُهُ
+إِرْثًا وَيَمْنَعُهُ مِنْ حَيْثُ يُطْمِعُهُ...
+
+[Outro | deep male vocals | clean electric guitar]
+وَالدَّهْرُ يُعْطِي الْفَتَى مِنْ حَيْثُ يَمْنَعُهُ
+إِرْثًا وَيَمْنَعُهُ مِنْ حَيْثُ يُطْمِعُهُ... --request-option style=arabmaqamrock, classical arabic, melismatic, microtonal ornaments, belting, tarab, emotive expressive delivery, symphonic metal, powerful operatic performance, rhythm guitar, epic, clear enunciation, vocal-forward mix, crisp consonants, audiophile, call and response, backing vocals, Maqam Nahawand, mood: "philosophical, contemplative, reflective" --request-option cot=off --request-option semantic_max_tokens=8000 --seed 2513861043 --out /content/arabmaqamrock/out/20261027-125131_pragmatic-grasshopper_ibn_zuraiq_formatted/01-العذل-والمطامع-وفلسفة-الرزق_2513861043.wav --log"
+	User time (seconds): 673.16
+	System time (seconds): 22.52
+	Percent of CPU this job got: 108%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 10:42.71
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8581724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 57146
+	Minor (reclaiming a frame) page faults: 8140326
+	Voluntary context switches: 69688
+	Involuntary context switches: 175886
+	Swaps: 0
+	File system inputs: 14211928
+	File system outputs: 99408
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

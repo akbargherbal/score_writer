@@ -1,0 +1,60 @@
+	Command being timed: "/content/arabmaqamrock/bin/audiocpp_cli --task gen --family yue2 --model /content/arabmaqamrock/models/Yue2-3B-GGUF --backend cuda --threads 8 --session-option yue2.model_gguf=yue2-3b-bf16.gguf --session-option yue2.vae_gguf=yue2-vae-f16.gguf --session-option yue2.ar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-ar.safetensors --session-option yue2.ar_lora_scale=1.0 --session-option yue2.nar_lora=/content/arabmaqamrock/loras/arabmaqamrock-v3-nar.safetensors --session-option yue2.nar_lora_scale=1.0 --session-option yue2.attention=flash --lyrics ///***///
+[Intro | single clean guitar | close-mic'd, plate reverb, short decay]
+اعْتَضْتُ مِنْ وَجْهِ خِلِّي بَعْدَ فُرْقَتِهِ كَأْسًا
+يُجَرَّعُ مِنْهَا مَا أُجَرَّعُهُ...
+
+[Verse 1 | dark brooding vocals | muted rhythmic guitars and heavy bass]
+اعْتَضْتُ مِنْ وَجْهِ خِلِّي بَعْدَ فُرْقَتِهِ كَأْسًا
+يُجَرَّعُ مِنْهَا مَا أُجَرَّعُهُ...
+كَمْ قَائِلٍ لِي ذُقْتَ الْبَيْنَ قُلْتُ لَهُ
+الذَّنْبُ وَاللَّهِ ذَنْبِي لَسْتُ أَدْفَعُهُ...
+أَلَا أَقَمْتَ فَكَانَ الرُّشْدُ أَجْمَعُهُ
+لَوْ أَنَّنِي يَوْمَ بَانَ الرُّشْدُ أَتْبَعُهُ...
+لَوْ أَنَّنِي لَمْ تَقَعْ عَيْنِي عَلَى بَلَدٍ
+فِي سَفْرَتِي هَـٰذِهِ إِلَّا وَأَقْطَعُهُ...
+إِنِّي لَأَقْطَعُ أَيَّامِي وَأُنْفِدُهَا
+بِحَسْرَةٍ مِنْهُ فِي قَلْبِي تُقَطِّعُهُ...
+
+[Chorus | anguished powerful vocals | heavy orchestral swell and distorted guitars — Kurd]
+مَا كُنْتُ أَحْسَبُ أَنَّ الدَّهْرَ يَفْجَعُنِي بِهِ
+وَلَا أَنَّ بِي الْأَيَّامَ تَفْجَعُهُ...
+
+[Verse 2]
+بِمَنْ إِذَا هَجَعَ النُّوَّامُ بِتُّ لَهُ
+بِلَوْعَةٍ مِنْهُ لَيْلِي لَسْتُ أَهْجَعُهُ...
+لَا يَطْمَئِنُّ لِجَنْبِي مَضْجَعٌ وَكَذَا
+لَا يَطْمَئِنُّ لَهُ مُذْ بِنْتُ مَضْجَعُهُ...
+حَتَّى جَرَى الْبَيْنُ فِيمَا بَيْنَنَا بِيَدٍ عَسْرَاءَ
+تَمْنَعُنِي حَظِّي وَتَمْنَعُهُ...
+قَدْ كُنْتُ مِنْ رَيْبِ دَهْرِي جَازِعًا فَرِقًا
+فَلَمْ أُوَقَّ ٱلَّذِي قَدْ كُنْتُ أَجْزَعُهُ...
+
+[Chorus]
+مَا كُنْتُ أَحْسَبُ أَنَّ الدَّهْرَ يَفْجَعُنِي بِهِ
+وَلَا أَنَّ بِي الْأَيَّامَ تَفْجَعُهُ...
+
+[Outro | deep male vocals | clean electric guitar]
+قَدْ كُنْتُ مِنْ رَيْبِ دَهْرِي جَازِعًا فَرِقًا
+فَلَمْ أُوَقَّ ٱلَّذِي قَدْ كُنْتُ أَجْزَعُهُ... --request-option style=arabmaqamrock, classical arabic, melismatic, microtonal ornaments, belting, tarab, emotive expressive delivery, symphonic metal, powerful operatic performance, rhythm guitar, epic, clear enunciation, vocal-forward mix, crisp consonants, audiophile, call and response, backing vocals, Maqam Kurd, mood: "somber, torment, night dread" --request-option cot=off --request-option semantic_max_tokens=7000 --seed 1020265786 --out /content/arabmaqamrock/out/20261027-125131_pragmatic-grasshopper_ibn_zuraiq_formatted/03-تجرع-مرارة-البين-ووخز-الندم_1020265786.wav --log"
+	User time (seconds): 592.61
+	System time (seconds): 22.20
+	Percent of CPU this job got: 109%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:19.69
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7913472
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 57548
+	Minor (reclaiming a frame) page faults: 7986611
+	Voluntary context switches: 69155
+	Involuntary context switches: 173730
+	Swaps: 0
+	File system inputs: 14276592
+	File system outputs: 89192
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,46 @@
+{
+  "audio": "03-\u062a\u062c\u0631\u0639-\u0645\u0631\u0627\u0631\u0629-\u0627\u0644\u0628\u064a\u0646-\u0648\u0648\u062e\u0632-\u0627\u0644\u0646\u062f\u0645_3742961268.wav",
+  "duration_seconds": 234.83866666666665,
+  "prompts": [
+    "timestamp",
+    "downbeat_meter",
+    "structure",
+    "key",
+    "chord_full",
+    "melody_full"
+  ],
+  "preset": "default",
+  "melody_only": false,
+  "dtype": "fp32",
+  "window_seconds": 300.0,
+  "overlap_seconds": 200.0,
+  "lookahead_seconds": 100.0,
+  "windows": [
+    {
+      "start": 0.0,
+      "end": 234.83866666666665,
+      "accept_start": 0.0,
+      "accept_end": 234.83866666666665,
+      "prefix_end": 0.0,
+      "generation_stop": null,
+      "window_index": 0,
+      "prefix_tokens": 0,
+      "tokens": 2262,
+      "events": 702,
+      "accepted_events": 702,
+      "elapsed_seconds": 31.06176279600004
+    }
+  ],
+  "elapsed_seconds": 32.85802179300117,
+  "warnings": [],
+  "peak_gpu_mib": 3382.48828125,
+  "melody_notes": 577,
+  "vocal_notes": 419,
+  "instrumental_notes": 158,
+  "events": 702,
+  "abc_measures": 139,
+  "abc_error": null,
+  "diagnostics": [
+    "measure 24: inferred 1/4 from downbeat span; declared numerators were [2]"
+  ]
+}

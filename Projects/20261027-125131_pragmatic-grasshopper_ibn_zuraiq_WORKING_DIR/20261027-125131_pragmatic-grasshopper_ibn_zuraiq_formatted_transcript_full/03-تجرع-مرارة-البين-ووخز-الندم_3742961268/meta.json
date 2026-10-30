@@ -1,0 +1,22 @@
+{
+  "tool": "arabmaqamrock-transcribe/1",
+  "created_utc": "2026-10-27T15:28:30Z",
+  "status": "ok",
+  "source_wav": "/content/arabmaqamrock/out/20261027-125131_pragmatic-grasshopper_ibn_zuraiq_formatted/03-تجرع-مرارة-البين-ووخز-الندم_3742961268.wav",
+  "source_wav_sha256": "1d831860ea736f67d5da89c286b24c909999e12926042c693aab1f3276f21ebb",
+  "source_wav_bytes": 45089068,
+  "duration_s": 234.839,
+  "model": "m-a-p/SheetSage2",
+  "model_revision": "b83c3d79a6d98bcffaf8f9ed112c90aa887887bc",
+  "melody_only": false,
+  "device": "cuda",
+  "dtype": "fp32",
+  "threads": 2,
+  "python": "3.11.17",
+  "torch": "2.8.0+cu126",
+  "transformers": "4.45.2",
+  "seconds": 32.9,
+  "abc": "score.abc",
+  "abc_sha256": "e092f34613d3aa0bf5028f002e8f2b40f34c0c98683dd7e09dbcb37c0a1863a4",
+  "abc_bytes": 2829
+}
