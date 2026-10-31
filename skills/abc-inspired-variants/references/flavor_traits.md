@@ -1,6 +1,8 @@
 # Flavor traits: from numbers to plain Arabic to ABC
 
-Use this to build the flavor card for each reference score (SKILL.md step 1) and to realize a trait in a new variant (step 4). The numbers come from `python scripts/abc_tool.py features file.abc`; `python scripts/abc_tool.py traits file.abc` compares one song with its sibling songs in the same folder and prints the 5 most unusual numbers (z-scores), which is the fastest route to the flavor card. Use `--tonic <Tonic>` on `features` with the tonic decided in step 2, because the `K:` line is only a guess and the `degrees_pct` row is measured from it.
+Use this to build the flavor card for each reference score (SKILL.md step 1) and to decide what a variant must
+**protect**. The traits below are what makes the song itself: a variant may amplify one of them deliberately, never
+delete one by accident. The numbers come from `python scripts/abc_tool.py features file.abc`; `python scripts/abc_tool.py traits file.abc` compares one song with its sibling songs in the same folder and prints the 5 most unusual numbers (z-scores), which is the fastest route to the flavor card. Use `--tonic <Tonic>` on `features` with the tonic decided in step 2, because the `K:` line is only a guess and the `degrees_pct` row is measured from it.
 
 ## Contents
 1. Trait table
@@ -39,21 +41,37 @@ three. If nothing reaches |z| >= 1, say the song is statistically ordinary for i
 ideas instead. Mention in the report that the flavor card is read from numbers only.
 When he later gives his own words about a song (feedback session), his words win over the numbers.
 
-## 3. Realizing each trait in ABC
+## 3. Protecting a trait (default) or amplifying it (deliberately)
 
-- **Short singable phrases**: break a long hemistich into two sung chunks with a one-beat rest between them (`z4` at `L:1/16` is one quarter-note beat). Keep about 8-12 notes per chunk.
-- **Less recitation**: replace runs of equal notes with a small turn (neighbor note up and back) or let the last syllable of the phrase leap a third or a fourth, then fall.
-- **Fills in the gaps**: put 5-8 notes in the `Ins` voice during the rest the Vocal leaves after a hemistich. Give the fill one clear shape (e.g. up two steps, down, settle) and let it return later transposed or with a changed ending.
-- **Irregular spacing**: do not place a fill after every line. For example after line 1, skip line 2, answer after line 3 and 4, then wait longer before the chorus. Avoid equal gaps for more than two fills in a row.
-- **Rhythmic contrast**: mix a few long notes (`4`, `6`) with runs of short ones (`1`, `2`). A phrase made only of equal short notes is flat.
-- **Mode color**: use the target maqam's own notes and characteristic move (`references/maqam_rules.md`); get the right ABC letters from `abc_tool.py scale`. Playback is 12-tone, so never claim a faithful microtonal maqam.
-- **Refrain**: reuse the opening melody for the chorus line so the same couplet is heard repeatedly. Flag it as a structural option (lyrics unchanged).
-- **Range and contour**: climb through the verse to a high point in the chorus (e.g. chorus starts a fourth above verse), return low in the outro.
-- **Silence**: leave one or two beats before the last word of a line for the instrument to answer.
+Every bullet has two columns of thought: the first line is **how to keep this trait** in an edit; the second is when
+you may push it further.
+
+- **Long recitation-like phrases** (`avg_notes_per_phrase` high, `repeated_pitch_pct` high): this is how a long
+  classical hemistich is actually sung. Keep the repeated notes and the long phrases. Only B (Recompose) may cut one
+  section into shorter chunks, and only if "the line is shapeless" is on the weakness list.
+- **Short singable phrases**: keep the rests where the source has them; you may add one breath before a cadence.
+- **Smooth steps vs leaps** (`step_pct`/`leap_pct`): copy the ratio. If the source leaps on 16% of its moves, a new
+  section should leap on roughly 16%, not on 5%. Leaps are where the drama lives.
+- **Rhythmic busyness** (`median_note_sec`, `notes_per_sec_when_sounding`): any new material must land within
+  x0.6-1.6 of the source's median note length. Doubling the note length is heard as "slower and sleepier".
+- **Silence** (`sounding_pct`): keep the source's share. Filling every gap with a fill is a downgrade.
+- **The second voice** (`Ins` sounding_pct, note count, range): it is an arrangement line. Keep its activity level and
+  its span; a counter-melody is allowed, four 3-note fills are not.
+- **Mode colour** (`degrees_pct`): keep the mix. Losing b7 in Nahawand or 6 in Hijaz strips the colour he liked.
+- **Range and contour**: keep the source's apex where it is. Moving the highest note from the verse into the chorus is
+  a *great* weakness to fix (that is B's job); compressing the whole melody into one octave is not.
+- **Refrain**: if the source already repeats a couplet (intro/verse/chorus), keep the repeat. Adding one is a
+  structural improvement worth testing in B or C.
+- **Fills**: keep the ones the source has, in the same places. A new fill may be added only in A (the hook) or to
+  answer a recomposed section in B/C.
 
 ## 4. Making a hook (hypotheses to test, not rules)
 
-From the project's three tracks (see `project_context.md`, section 4): a short figure of 4-8 notes with a distinctive rhythm; placed in the silence after a sung line; recurring with small variation at less predictable intervals; present early (first minute) so the ear can latch on. Offer these as experiments. If the user reacts against one, drop it.
+From the project's tracks (see `project_context.md`, section 4): a short figure of 4-8 notes with a distinctive
+rhythm; placed in the silence after a sung line; recurring with small variation at less predictable intervals;
+present early so the ear can latch on. **Build it from the source's own material** (a fragment of its intro, its
+chorus tail, or its own fill) rather than inventing a new motif: a hook the listener half-knows already is the
+cheapest improvement available. Offer it as an experiment; if he reacts against it, drop it.
 
 ## 5. Translating for the user
 

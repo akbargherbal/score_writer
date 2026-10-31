@@ -32,6 +32,10 @@ Tolerated "colour" guests (limited to about 12% of a voice's time, the tool coun
 Ajam b7; Hijaz 6 and 7; Nahawand 7 (the raised seventh, harmonic-minor colour). Kurd has none.
 Anything else counts as outside the maqam; the tool allows only a few percent for passing notes.
 
+**The scale degrees inside the maqam are not "cleanliness": they are the song's colours.** A Nahawand line that
+spends 12% of its time on b7 is not sloppy, it is the mode. When you edit a source, match its own degree mix
+(`features` prints `degrees_pct`); do not bleach the colour degrees to zero.
+
 ## 2. Ajam
 - Structure: Ajam jins (1 2 3 4) on the tonic, joined at the 5th with another Ajam jins (5 6 7 8).
 - Feel: bright, major. The 3 must be major and the 7 should appear (at least in cadences as a leading tone).
@@ -71,18 +75,18 @@ Anything else counts as outside the maqam; the tool allows only a few percent fo
 
 ## 6. Shared principles
 
-- **Home note.** A maqam needs an audible home. The tool requires the last Vocal note to be the tonic
-  and wants a real share of phrases to come to rest on it. Rest on the dominant (5) mid-song, on the
-  tonic at the ends of sections and the end of the piece.
-- **Sayr (melodic journey), common practice, not a law.** Open around the tonic or the 3rd, establish
-  the dominant, rise into the upper jins for the climax (chorus), then come back down stepwise to the
-  tonic. Chorus higher than verse is a good default; the outro returns low.
-- **Cadence formulas** above are the point where a maqam is recognised. Use them at section ends,
-  especially the final one.
-- **Skips.** Large leaps are fine when they land on 1, 3(b3), 5 or 8; unprepared leaps onto the
-  characteristic degrees (b2, 3 in Hijaz) sound arbitrary.
-- **Transposition is free, structure is not.** You may write the maqam on any tonic. The spelling is
-  tonic-relative; `scale` prints the exact ABC letters for the file's `K:`.
+- **Home note.** A maqam needs an audible home. The last Vocal note of the piece is the tonic. A real share of
+  phrases should come to rest on it (or on the 5th, which is also a resting note) — but the *rate* is the source's
+  own: if the source ends two of eight lines on the 3rd or the 2nd, keep that. Do not turn every line into the same
+  cadence; that is what made the first batch of variants sound like an exercise.
+- **Sayr (melodic journey), common practice, not a law.** Open around the tonic or the 3rd, establish the dominant,
+  rise into the upper jins for the climax, come back down to the tonic. Use it to *decide what to change*, not as a
+  licence to rewrite: in an edit, the sayr is already there. Only the part you recompose follows this from scratch.
+- **Cadence formulas** above are where a maqam is recognised. Use them at the section ends you actually rewrite.
+- **Skips.** Large leaps are fine when they land on 1, 3(b3), 5 or 8; unprepared leaps onto the characteristic
+  degrees (b2, 3 in Hijaz) sound arbitrary.
+- **Transposition is free, structure is not.** Write the maqam on any tonic; the spelling is tonic-relative and
+  `scale` prints the exact ABC letters for the file's `K:`.
 
 ## 7. Twin-mode trap (why detection can be uncertain)
 
@@ -93,8 +97,13 @@ where phrases come to rest and where the song ends, and when still unsure, follo
 
 ## 8. Compliance checklist for each variant
 
+A variant is a repair of a score that already passed these tests. So:
+
 1. `abc_tool.py modal VAR.abc --maqam M --tonic T` prints OK with no FIX lines.
-2. The characteristic move appears in the first two sung phrases and again in the chorus.
-3. Every section ends on a rest note appropriate to the maqam (tonic or 5th); the piece ends on the tonic.
-4. The Ins voice obeys the same scale (the tool allows it slightly more freedom for passing notes).
-5. No microtonal accidentals are needed to make the maqam recognisable.
+2. The characteristic move still appears where the source had it (first two sung phrases, and in the chorus).
+3. **The source's cadence behaviour is preserved**: phrases that rested on 1 or 5 still do; a section the source
+   deliberately left open (ending on 2 or b3) may stay open. Only the final note of the piece must be the tonic —
+   and if the source ends elsewhere, that is a named weakness to repair, not a rule to impose on every phrase.
+4. The `Ins` voice obeys the same scale (the tool allows it slightly more freedom for passing notes).
+5. The degree mix (`features`, `degrees_pct`) is close to the source's. Losing a colour degree the source leans on
+   (b7 in Nahawand, 6 in Hijaz) is a `character` FIX from `verify`, not a "cleaner" result.

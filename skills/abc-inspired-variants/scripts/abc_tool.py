@@ -15,7 +15,8 @@ abc_tool.py - measure, validate and compare ABC scores (stdlib only).
   python abc_tool.py structure score.abc [--tonic D]      (sections from "% verse" comments: bars, notes, register, ending degree, chords)
   python abc_tool.py lint     a.abc [b.abc ...]           (is it inside the YuE2 native ABC dialect? see references/native_dialect.md)
   python abc_tool.py strip-chords src.abc dst.abc         (chord-free copy for cot="melody"; verifies every note is unchanged)
-  python abc_tool.py verify   SONG_FOLDER --maqam Hijaz --tonic D   (step 5 in one call: check+lint+modal+distance+structure parity)
+  python abc_tool.py verify   SONG_FOLDER --maqam Hijaz --tonic D   (step 5 in one call: check+lint+modal+fidelity+parity)
+  python abc_tool.py chords-from src.abc var.abc  (copy the source's chords onto a variant; proves the notes do not move)
 
 Accidental scope: YuE2's native dialect lets an accidental reach the same letter in EVERY octave until the barline,
 whereas abcjs / standard ABC applies it to one octave only. The parser follows the native rule by default (the
@@ -28,6 +29,10 @@ check    : does every bar add up to the meter? do voices end together? (so the
            abcjs editor plays it as intended)
 compare  : longest identical melodic run (in intervals, so transposition does not
            hide a copy) between a candidate and references / other candidates.
+           For a variant, HIGH is good: it means the song survived. The FIX/floor
+           rules live in `verify` (fidelity_report): melodic similarity, shared note
+           starts, repeated-note share, step/leap balance, range, median note length,
+           second-voice activity, meter scheme and chord presence.
 
 Handles what auto-transcribed scores contain: voices (V:), chord symbols, ties,
 key signatures with bar-long accidental memory, Z multi-bar rests, mid-tune M:/L:
@@ -120,6 +125,8 @@ def parse_abc(path):
     tonic, sig = 0, {}
     meter_str, unit_str = "", ""
     meters_seen = []
+    meter_events = []
+    cur_meter_str = ""
     voices, bars = {}, {}
     chords, nbars = {}, {}
     sections = []
@@ -173,6 +180,9 @@ def parse_abc(path):
                 meter = parse_frac(v, meter) if "/" in v else meter
                 if v.strip() not in meters_seen:
                     meters_seen.append(v.strip())
+                if v.strip() != cur_meter_str:
+                    meter_events.append([max(nbars.values()) if nbars else 0, v.strip()])
+                    cur_meter_str = v.strip()
                 if not meter_str:
                     meter_str = v.strip()
                 for bl in bars.values():
@@ -199,6 +209,7 @@ def parse_abc(path):
         for fld in re.findall(r"\[([A-Za-z]):([^\]]*)\]", body):
             if fld[0] == "M":
                 meter = parse_frac(fld[1], meter)
+                meter_events.append([max(nbars.values()) if nbars else 0, fld[1].strip()])
             elif fld[0] == "V":
                 cur = fld[1].split()[0]
                 ensure(cur)
@@ -268,7 +279,31 @@ def parse_abc(path):
             warns.append((0, f"voice {v} ends with an unresolved tie"))
     return dict(meta=dict(tonic=tonic, qpm=qpm, meter=float(meter * 4), meter_str=meter_str or str(meter),
                           unit=str(unit), unit_str=unit_str, meters=meters_seen),
-                voices=voices, bars=bars, chords=chords, sections=sections, nbars=nbars, warns=warns)
+                voices=voices, bars=bars, chords=chords, sections=sections, nbars=nbars, warns=warns,
+                meter_events=_dedupe_meters(meter_events))
+
+
+def _dedupe_meters(evs):
+    """[(bar_index, '2/4'), ...] one entry per actual meter change, in order."""
+    out = []
+    for b, m in evs:
+        if out and out[-1][1] == m:
+            continue
+        out.append((int(b), m))
+    return out
+
+
+def bar_start_times(P, voice):
+    """Start time (quarter notes) of every bar of one voice, from the parsed bar list
+    (a Z4 multi-bar rest yields four starts)."""
+    v = voice or main_voice_name(P)
+    out, t = [], 0.0
+    for dur, exp in P["bars"].get(v, []):
+        n = max(1, int(round(dur / exp))) if exp else 1
+        for _ in range(n):
+            out.append(t)
+            t += exp
+    return out
 
 
 # ---------------------------------------------------------------- features
@@ -442,8 +477,8 @@ def compare(cand_path, ref_paths):
             rows.append(dict(ref=rp, voice=v, longest_identical_interval_run=n,
                              overall_similarity=round(ratio, 2),
                              rhythm_similarity=round(rhythm, 2), duration_similarity=round(dseq, 2),
-                             verdict="TOO CLOSE (>=10 identical moves) - rewrite" if n >= 10
-                             else "shares a motif-sized cell (6-9) - fine if intended" if n >= 6 else "ok"))
+                             verdict="same melodic line (>=10 moves kept - expected for an edit)" if n >= 10
+                             else "shares a motif-sized cell (6-9)" if n >= 6 else "little in common"))
     return rows
 
 
@@ -1143,7 +1178,195 @@ def distinctness(p1, p2):
     return out, len(MEASURES) + 1
 
 
-def cmd_verify(folder, maq, tonic, source=None):
+# ------------------------------------------------------- fidelity (stay close!)
+# The user rates the SOURCE, not the variant. A variant that drifts away from it is a
+# failure even when it is a nice melody: the generated track then stops sounding like the
+# song he liked. So each recipe has a FLOOR for similarity and for the source's character.
+RECIPES = {
+    "A": dict(name="Enhance", sim=0.75, rhythm=0.80, rep=0.55, ins=0.60,
+              step_allow=12, leap=0.55, rng=0.75, med=(0.70, 1.45)),
+    "B": dict(name="Recompose one part", sim=0.55, rhythm=0.55, rep=0.45, ins=0.50,
+              step_allow=16, leap=0.45, rng=0.70, med=(0.60, 1.60)),
+    "C": dict(name="New hook", sim=0.40, rhythm=0.35, rep=0.35, ins=0.40,
+              step_allow=20, leap=0.35, rng=0.65, med=(0.55, 1.75)),
+}
+
+
+def fidelity_report(src_path, cand_path, letter):
+    """Does the variant stay the same song? -> [(level, text)] (FIX / WARN)."""
+    r = RECIPES.get(letter or "B", RECIPES["B"])
+    S, C = parse_abc(src_path), parse_abc(cand_path)
+    mv = main_voice_name(S)
+    msgs = []
+    a, b = contour(S["voices"][mv]), contour(C["voices"][mv])
+    if len(a) < 3 or len(b) < 3:
+        return msgs
+    sim = difflib.SequenceMatcher(None, a, b, autojunk=False).ratio()
+    ra, rb = onset_grid(S["voices"][mv]), onset_grid(C["voices"][mv])
+    rhy = len(ra & rb) / max(len(ra | rb), 1)
+    if sim < r["sim"] - 1e-9:
+        msgs.append(("FIX", "fidelity: keeps only %s of the source's melodic moves "
+                            "(recipe %s/%s needs >= %s). Edit the source, do not write a new tune."
+                            % (round(sim, 2), letter, r["name"], r["sim"])))
+    if rhy < r["rhythm"] - 1e-9:
+        msgs.append(("FIX", "fidelity: shares only %s of the source's note starts (needs >= %s). "
+                            "Keep the source's rhythm wherever the words are unchanged."
+                            % (round(rhy, 2), r["rhythm"])))
+    fs = voice_features(S["voices"][mv], S["meta"])
+    fc = voice_features(C["voices"][mv], C["meta"])
+
+    def chk(cond, text):
+        if cond:
+            msgs.append(("FIX", "character: " + text))
+
+    chk(fc["repeated_pitch_pct"] < r["rep"] * fs["repeated_pitch_pct"] - 1e-9,
+        "repeated-note recitation fell from %s%% to %s%% (keep at least %s%% of it: it is part of "
+        "this singer's delivery)" % (fs["repeated_pitch_pct"], fc["repeated_pitch_pct"], int(r["rep"] * 100)))
+    chk(fc["step_pct"] > fs["step_pct"] + r["step_allow"] + 1e-9,
+        "the line became smoother than the source (%s%% -> %s%% stepwise): put the source's leaps back"
+        % (fs["step_pct"], fc["step_pct"]))
+    chk(fc["leap_pct"] < r["leap"] * fs["leap_pct"] - 1e-9,
+        "leaps fell from %s%% to %s%% (keep at least %s%% of them)"
+        % (fs["leap_pct"], fc["leap_pct"], int(r["leap"] * 100)))
+    chk(fc["range_semitones"] < r["rng"] * fs["range_semitones"] - 1e-9,
+        "range shrank from %s to %s semitones (keep at least %s%% of the source's span)"
+        % (fs["range_semitones"], fc["range_semitones"], int(round(100 * r["rng"]))))
+    lo, hi = r["med"]
+    ratio = fc["median_note_sec"] / max(fs["median_note_sec"], 1e-9)
+    chk(ratio < lo or ratio > hi,
+        "median note length moved from %ss to %ss (x%s; allowed x%s-%s): the rhythm density left "
+        "the song's own range" % (fs["median_note_sec"], fc["median_note_sec"], round(ratio, 2), lo, hi))
+    mins = [v for v in S["voices"] if v != mv]
+    minc = [v for v in C["voices"] if v != mv]
+    if mins and minc:
+        isf = voice_features(S["voices"][mins[0]], S["meta"])
+        icf = voice_features(C["voices"][minc[0]], C["meta"])
+        if isf and icf and icf["sounding_pct"] < r["ins"] * isf["sounding_pct"] - 1e-9:
+            msgs.append(("FIX", "character: the second voice speaks %s%% of the time vs %s%% in the "
+                                "source (keep >= %s%%). It is an arrangement line, not a few fills."
+                          % (icf["sounding_pct"], isf["sounding_pct"], int(round(100 * r["ins"])))))
+    ms, mc = S.get("meter_events", []), C.get("meter_events", [])
+    if len(ms) > 1 or len(mc) > 1:
+        if ms != mc:
+            miss = ["bar %d: %s" % (b + 1, m) for b, m in ms if (b, m) not in mc]
+            extra = ["bar %d: %s" % (b + 1, m) for b, m in mc if (b, m) not in ms]
+            txt = "fidelity: the meter scheme changed"
+            if miss:
+                txt += "; missing " + ", ".join(miss[:4])
+            if extra:
+                txt += "; added " + ", ".join(extra[:4])
+            msgs.append(("FIX", txt + ". Keep the source's M: changes at the same bars."))
+    if sim > 0.985 and rhy > 0.985:
+        same_ins = False
+        if mins and minc:
+            ga, gb = onset_grid(S["voices"][mins[0]]), onset_grid(C["voices"][minc[0]])
+            same_ins = len(ga & gb) / max(len(ga | gb), 1) > 0.98
+        if same_ins:
+            msgs.append(("WARN", "fidelity: both voices are an unedited copy - no improvement is being tested"))
+    if S["chords"].get(mv) and not C["chords"].get(mv) and letter in ("A", "B"):
+        msgs.append(("FIX", "chords: the source has chord symbols and this file has none. Run "
+                            "`chords-from` (or keep the source's chords) so the accompaniment survives; "
+                            "see abc_writing.md section 7."))
+    return msgs
+
+
+# ------------------------------------------------------------------ chords
+def chords_from(src, dst_path):
+    """Copy the source's chord symbols onto a variant, one per bar, and prove the notes did not move."""
+    S = parse_abc(src)
+    mvs = main_voice_name(S)
+    before = parse_abc(dst_path)
+    if len(S["bars"].get(mvs, [])) and len(before["bars"].get(mvs, [])) and \
+            abs(len(S["bars"][mvs]) - len(before["bars"][mvs])) > 1:
+        print("the two files do not have the same number of bars (%d vs %d); chord carry-over skipped"
+              % (len(S["bars"][mvs]), len(before["bars"][mvs])))
+        return 2
+    starts = bar_start_times(S, mvs)
+    ch = sorted(S["chords"].get(mvs, []))
+    by_bar, pick = {}, None
+    for k, t in enumerate(starts):
+        for ct, sym, ln in ch:
+            if ct <= t + 1e-6:
+                pick = sym
+            else:
+                break
+        if pick:
+            by_bar[k] = pick
+    lines = open(dst_path, encoding="utf-8").read().split("\n")
+    out, voice, k = [], None, 0
+    for ln in lines:
+        st = ln.strip()
+        if not st or st.startswith("%"):
+            out.append(ln)
+            continue
+        m = re.match(r"V:\s*(\S+)", st)
+        if m:
+            voice = m.group(1)
+            out.append(ln)
+            continue
+        if re.match(r"[A-Za-z]:", st):
+            out.append(ln)
+            continue
+        if voice != mvs:
+            out.append(ln)
+            continue
+        segs = ln.split("|")
+        trail = ln.rstrip().endswith("|")
+        if trail:
+            segs = segs[:-1]
+        new = []
+        for seg in segs:
+            sym = by_bar.get(k)
+            body = seg
+            if sym and not seg.lstrip().startswith('"'):
+                body = '"%s"' % sym + seg
+            new.append(body)
+            k += 1
+        out.append("|".join(new) + ("|" if trail else ""))
+    text = "\n".join(out)
+    tmp = dst_path + ".tmp"
+    open(tmp, "w", encoding="utf-8").write(text)
+    after = parse_abc(tmp)
+    ok = True
+    for v in before["voices"]:
+        if [e[:4] for e in before["voices"][v]] != [e[:4] for e in after["voices"].get(v, [])]:
+            ok = False
+    if not ok or before["meta"]["qpm"] != after["meta"]["qpm"]:
+        import os
+        os.remove(tmp)
+        print("refusing to write: the notes, onsets or tempo would change")
+        return 1
+    import os
+    os.replace(tmp, dst_path)
+    print("wrote %s: %d chord symbols copied from %s; every note, onset, duration and the tempo verified identical"
+          % (dst_path, len(after["chords"].get(mvs, [])), src))
+    return 0
+
+
+def section_diff(p1, p2):
+    """Which sections of two variants actually differ? -> [(index, label, similarity)]."""
+    A, B = parse_abc(p1), parse_abc(p2)
+    mv = main_voice_name(A)
+    out = []
+    ta, tb = section_table(A, 0), section_table(B, 0)
+    for i, (ra, rb) in enumerate(zip(ta, tb), 1):
+        # locate by start bar, so the ranges are identical in both files
+        b0 = ra["start_bar"] - 1
+        b1 = b0 + ra["bars"]
+        sa = bar_start_times(A, mv)[b0] if b0 < len(bar_start_times(A, mv)) else 0
+        sb = bar_start_times(B, mv)[b0] if b0 < len(bar_start_times(B, mv)) else 0
+        ea = bar_start_times(A, mv)[b1] if b1 < len(bar_start_times(A, mv)) else 1e9
+        eb = bar_start_times(B, mv)[b1] if b1 < len(bar_start_times(B, mv)) else 1e9
+        ca = contour([e for e in A["voices"][mv] if sa - 1e-6 <= e[1] < ea])
+        cb = contour([e for e in B["voices"][mv] if sb - 1e-6 <= e[1] < eb])
+        if len(ca) < 3 or len(cb) < 3:
+            continue
+        sim = difflib.SequenceMatcher(None, ca, cb, autojunk=False).ratio()
+        out.append((i, ra["label"], round(sim, 2)))
+    return out
+
+
+def cmd_verify(folder, maq, tonic, source=None, recipe=None):
     """Step 5 of the skill in one call. Exit code 1 if any FIX remains."""
     import glob, os
     src = source or os.path.join(folder, "score.abc")
@@ -1162,8 +1385,7 @@ def cmd_verify(folder, maq, tonic, source=None):
     summary = []
     for f in files:
         name = os.path.basename(f)
-        letter = (re.match(r"VAR_([A-Z])_", name) or [None, "?"])[1]
-        cap = 0.60 if letter == "A" else 0.50
+        letter = recipe or (re.match(r"VAR_([A-Z])_", name) or [None, "?"])[1]
         fx, wn = [], []
         fx += [f"bars: {m}" for m in check(f)]
         for lvl, m in lint(f):
@@ -1178,12 +1400,8 @@ def cmd_verify(folder, maq, tonic, source=None):
             if r["voice"] != mvs:
                 continue
             run, sim, rhy = r["longest_identical_interval_run"], r["overall_similarity"], r["rhythm_similarity"]
-            if run > 7:
-                fx.append(f"distance: {run} identical melodic moves in a row (limit 7)")
-            if sim > cap:
-                fx.append(f"distance: melodic similarity {sim} (limit {cap} for {letter})")
-            if letter in "BC" and rhy > 0.60:
-                wn.append(f"distance: rhythm skeleton shared {rhy} - recipe {letter} promised a different rhythm")
+        for lvl, m in fidelity_report(src, f, letter):
+            (fx if lvl == "FIX" else wn).append(m)
         for lvl, m in parity(f, src):
             (fx if lvl == "FIX" else wn).append(f"layout: {m}")
         P = parse_abc(f)
@@ -1198,17 +1416,17 @@ def cmd_verify(folder, maq, tonic, source=None):
             print("   FIX ", x)
         for x in wn:
             print("   WARN", x)
-    print("-- how different are the variants from each other (need >= 3 measurable ways each pair)")
+    print("-- how different are the variants from each other (global numbers + the sections that actually differ)")
     for i in range(len(files)):
         for j in range(i + 1, len(files)):
             a, b = os.path.basename(files[i]), os.path.basename(files[j])
             rr = compare(files[i], [files[j]])
             rr = [r for r in rr if r["voice"] == mvs]
-            ways, tot = distinctness(files[i], files[j])
-            line = f"   {a} vs {b}: differ in {len(ways)}/{tot} ways ({', '.join(ways) or 'none'})"
+            sd = [f"{n} ({lab})" for n, lab, sim in section_diff(files[i], files[j]) if sim < 0.9]
+            line = f"   {a} vs {b}: edited sections: {', '.join(sd) or 'none (they differ only outside the sung line)'}"
             if rr:
-                line += f"; identical run {rr[0]['longest_identical_interval_run']}, melodic similarity {rr[0]['overall_similarity']}, rhythm {rr[0]['rhythm_similarity']}"
-            print(line + ("   <- WARN: fewer than 3 ways" if len(ways) < 3 else ""))
+                line += f"; whole-piece melodic similarity {rr[0]['overall_similarity']}"
+            print(line)
     print("-- table: file, FIX, WARN, longest identical run, melodic sim, rhythm sim (vs source)")
     for s in summary:
         print("   " + "  ".join(str(x) for x in s))
@@ -1298,11 +1516,12 @@ def cmd_survey(root):
 
 def cmd_progress(root):
     import os
-    need = ["VAR_A_score.abc", "VAR_B_score.abc", "VAR_C_score.abc", "VAR_REPORT.md", "CONTROL_score.abc"]
+    need = ["VAR_A_score*.abc", "VAR_B_score*.abc", "VAR_C_score*.abc", "VAR_REPORT.md", "CONTROL_score.abc"]
     done = todo = 0
     for p in find_scores(root):
         d = os.path.dirname(p)
-        miss = [n for n in need if not os.path.exists(os.path.join(d, n))]
+        import glob as _g
+        miss = [n for n in need if not _g.glob(os.path.join(d, n))]
         if miss:
             todo += 1
             print(f"TODO  {d}   missing: {', '.join(miss)}")
@@ -1335,8 +1554,10 @@ def main(argv):
     a = sp.add_parser("structure"); a.add_argument("file"); a.add_argument("--tonic"); a.add_argument("--json", action="store_true")
     a = sp.add_parser("lint"); a.add_argument("files", nargs="+")
     a = sp.add_parser("strip-chords"); a.add_argument("src"); a.add_argument("dst")
+    a = sp.add_parser("chords-from"); a.add_argument("src"); a.add_argument("dst")
     a = sp.add_parser("verify"); a.add_argument("folder"); a.add_argument("--maqam", required=True)
     a.add_argument("--tonic", required=True); a.add_argument("--source")
+    a.add_argument("--recipe", help="A, B or C: sets the fidelity floors (default: read from the file name)")
     args = ap.parse_args(argv[1:])
     c = args.cmd
     if c == "features":
@@ -1410,8 +1631,10 @@ def main(argv):
         return 1 if bad else 0
     if c == "strip-chords":
         return strip_chords(args.src, args.dst)
+    if c == "chords-from":
+        return chords_from(args.src, args.dst)
     if c == "verify":
-        return cmd_verify(args.folder, args.maqam, args.tonic, args.source)
+        return cmd_verify(args.folder, args.maqam, args.tonic, args.source, args.recipe)
 
 
 if __name__ == "__main__":

@@ -46,6 +46,13 @@ There is no direct input path from ABC text to Suno or YuE. The routes that do r
 
 ## 4. What is already known
 
+**The most important item (high confidence, his own verdict, 2026-10-30).** He rated a source track 8/10. Three
+variants were written from its score and the tracks generated from them came back at 6.5 ("not impressive at all").
+The variants were not wrong or out of tune; they were *tidier and flatter* than the source: meter changes removed,
+chords dropped, median note length doubled, repeated notes 31% -> 3%, stepwise moves 53% -> 88%, colour degrees
+bleached, the accompaniment line reduced to a few fills, range squeezed to one octave. His conclusion, and the rule
+this skill now follows: **a variant is an edit of his song, not a new song**. For him, fidelity beats novelty.
+
 Confidence is stated per item. These came from comparing three transcribed tracks, with metrics chosen after seeing them, so treat them as hypotheses.
 
 - (Medium) The sung line of all three tracks looks alike statistically: long phrases (about 16-22 notes), around 40% repeated-pitch notes (recitation-like, because classical hemistichs are long), very few repeated melodic phrases. So the sung melody alone did not separate memorable from forgettable.

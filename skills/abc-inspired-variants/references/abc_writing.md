@@ -1,6 +1,8 @@
 # Writing ABC that plays correctly in abcjs
 
-The user pastes your file into https://www.abcjs.net/abcjs-editor and presses play. Keep the output close to the format his transcriber produces so it behaves the same.
+The user pastes your file into https://www.abcjs.net/abcjs-editor and presses play, and he also seeds generators with
+it. Keep the output close to the format his transcriber produces so it behaves the same **and sounds like the same
+song**: same meter scheme, same chords, same register, same rhythmic feel.
 The exact dialect (what is allowed, accidental scope, chord vocabulary) is in `native_dialect.md`; `abc_tool.py lint` checks it.
 
 ## Contents
@@ -10,10 +12,14 @@ The exact dialect (what is allowed, accidental scope, chord vocabulary) is in `n
 4. Pitch, accidentals, ties
 5. Common pitfalls
 6. Minimal example
-7. Spelling the maqam with `scale`
-8. Audio-seed friendliness
+7. Chords (keep the source's)
+7b. Spelling the maqam with `scale`
+8. Audio-seed friendliness (and what not to do)
 
 ## 1. Header skeleton (copy from the source score, do not invent one)
+
+Build a variant by copying `score.abc` and editing bars in place. That is not laziness: it is the only way the
+meter changes, the chord track, the register and the rhythm survive without extra work.
 
 ```
 X:1
@@ -95,7 +101,20 @@ z4D2F2|A2G2F2E2|
 
 Check: every bar is 8 units in both voices (the Vocal rests `Z|Z|` cover the two fill bars). (Lines are illustrative, not a recommendation.)
 
-## 7. Spelling the maqam with `scale`
+## 7. Chords: keep the source's
+
+The source's chord symbols are what abcjs turns into the accompaniment he hears, and they travel with the seed.
+Keep them. If a file was written from scratch and lost them:
+
+```
+python scripts/abc_tool.py chords-from <song>/score.abc VAR_A_score.abc
+```
+
+It copies the chord active at each bar of the source onto the same bar of the variant, and refuses to write if any
+note, onset or duration would move. Where you rewrote a bar's melody and the old chord no longer fits, replace that
+one symbol with a chord built on 1, 4 or 5 of the maqam (same key spelling) and say so in the report.
+
+## 7b. Spelling the maqam with `scale`
 
 Because `K:` is a transcriber guess (e.g. `K:D#m` for a song whose home note is C), plain letters often do not
 mean what you expect. Never spell by intuition; run
@@ -109,9 +128,19 @@ It lists each degree with the exact ABC token for that file's `K:` (plain letter
 `K:` line so the header stays identical across the variants. Afterwards `abc_tool.py modal` verifies the result
 and prints the source line number of every note outside the maqam.
 
-## 8. Audio-seed friendliness
+## 8. Audio-seed friendliness (and the four things not to do)
 
-The user will use the variants as seeds for generating new tracks, so what he hears from the abcjs/MIDI
-rendering is what matters. Keep `Vocal` a clean, singable single line (no chords or stacked notes in it).
-Keep `Q:` explicit. Avoid grace notes, tuplets and microtonal accidentals. Let `Ins` fills sit in the rests of
-`Vocal`, not on top of it. Keep pitches inside a comfortable range (about 1.5 octaves for `Vocal`).
+The user generates tracks from these files, so what abcjs plays is what the generator receives.
+
+- Keep `Vocal` a single melodic line. Chord symbols are labels, not stacked notes: they stay.
+- Keep `Q:` explicit and the source's `M:` scheme, mid-tune changes included.
+- **Keep the register the source uses.** Do not compress it "for singability": a span close to two octaves is normal
+  here and is part of what he liked. Making every line sit in one comfortable octave is the single most common way a
+  variant turns dull.
+- **`Ins` is an arrangement line, not a filler.** It may answer in the voice's gaps (good), but it must also be
+  allowed to play through a section as a counter-melody. Match roughly how much it sounds in the source (`structure`
+  prints the note count and `features` the sounding share): turning a 15%-of-the-time line into four 3-note fills
+  empties the arrangement.
+- Avoid grace notes, tuplets and microtonal accidentals.
+- Keep the source's melodic quirks: repeated notes, leaps, and the colour degrees it leans on. A "cleaner" seed
+  generates a cleaner, duller track.
