@@ -79,6 +79,11 @@ write next to it (`abc-inspired-variants-out/` if pasted only).
 
 ## Per-song pipeline
 
+### 0. Provenance
+Read the first 12 lines. `% VARIANT ... | recipe: ...` means the file is a previous variant, not the source.
+Compare its numbers with the damage table at the top: if two or more match the "flattened" column, say so in
+the report and repair toward the source profile, not toward the file's numbers.
+
 ### 1. Measure
 ```
 python scripts/abc_tool.py brief <song>/score.abc --label <Label>
@@ -90,8 +95,12 @@ Write down three things:
 
 **(a) Flavor card** — 2-3 traits where `traits` shows |z| >= 1 (or, if none, the song's most distinctive numbers).
 Say in the report that it comes from numbers only. These traits are **what to protect**, not what to fix.
+Match the source's degree mix within ±2 points per degree (`degrees_pct`): b7 2.3% → 7.6% is a different
+colour, not a repair. Colour is matched, not maximised.
 
-**(b) Weakness list** — 2-4 concrete weaknesses, each with a bar range and a reason. Look for:
+**(b) Weakness list** — 2-4 concrete weaknesses, each with a bar range and a reason. Every claim of low energy
+or a missing climax must cite the section's mean and max pitch next to the previous section (`structure`); a
+claim the section map contradicts is not a weakness. Look for:
 - a section that is lower in energy than the one before it (mean pitch, apex, or apex position late in the section);
 - the highest note of the song sitting in a verse instead of the chorus;
 - a section that ends on a degree that is not the tonic and not the dominant (an unresolved ending);
@@ -121,19 +130,25 @@ Sung notes per section stay within 15% of the source (the words were sung over t
 
 | Variant | Idea | Keep | Change (this is the whole budget) | Floors |
 |---|---|---|---|---|
-| **A Enhance** | the same song, repaired | everything: melody, rhythm, meter, chords, register, accompaniment | 1-2 weaknesses only: one new 4-6 note hook figure in `Ins` that returns 3-4 times (**irregularly** spaced, in the gaps the voice leaves), one cadence repaired, one register lift in the chorus, one awkward leap smoothed. At most ~10% of the sung notes may move. | sim >= 0.75, rhythm >= 0.80 |
-| **B Recompose one part** | one section written again, the rest untouched | intro, verses, interludes, outro, chords, meter, tempo | the weakest section (usually the chorus) is recomposed: new melody, but the same bars, the same note count, the same meter, the same rhythm character (median note length within x0.6-1.6) and the same chord track. It must fix the weakness that was named (e.g. lift the chorus a fourth). One new `Ins` line may answer it. | sim >= 0.55, rhythm >= 0.55 |
+| **A Enhance** | the same song, repaired | everything: melody, rhythm, meter, chords, register, accompaniment | 1-2 weaknesses only: one new 4-6 note hook figure in `Ins` that returns 3-4 times (**irregularly** spaced, in the gaps the voice leaves), one cadence repaired, one register lift in the chorus, one leap prepared *before* it (never smoothed). At most ~10% of the sung notes may move. | sim >= 0.75, rhythm >= 0.80 |
+| **B Recompose one part** | one section written again, the rest untouched | intro, verses, interludes, outro, chords, meter, tempo | the weakest section (usually the chorus) is recomposed: new melody, but the same bars, the same note count, the same meter, the same rhythm character (median note length within x0.6-1.6) and the same chord track. It must fix the weakness that was named (e.g. lift the chorus a fourth). "Lift" means a named interval in mean or apex, printed before/after: raising the mean by 2 semitones while the apex stays the same is a shade, not a lift — say which one you did. One new `Ins` line may answer it. | sim >= 0.55, rhythm >= 0.55 |
 | **C New hook** | a new chorus hook plus what it needs | verses, structure, chords, tempo, mood, delivery | a genuinely new chorus melody and one new `Ins` counter-line that answers it; the verses keep their own melody and rhythm. This is the only variant allowed to surprise. | sim >= 0.40, rhythm >= 0.35 |
 
-The three must differ **from each other in what they edit**: A changes the accompaniment and a cadence, B rewrites
-one section, C writes a new chorus plus its answer. Because the untouched 80-90% dominates every global number, the
-`verify` report lists the *sections that actually differ* (e.g. "3 (chorus), 6 (chorus)") — that is the useful line;
-the whole-piece similarity beside it will be high in all three and is not a defect. Borrow a *behaviour* (e.g.
+B and C floors, measured on the rewritten section only: leap share within ±4 points of the source section,
+repeated-pitch share within ±5 points, apex not lower, median note length within x0.6-1.6. A recomposition that
+turns 14.6% leaps into 1.5% is a `FIX`, not a new chorus.
+
+B replaces **one** section occurrence and leaves the other untouched; C writes the hook and its answer. If both
+replace the same bars, you tested one hypothesis twice. The `verify` report lists the *sections that actually
+differ* (e.g. "3 (chorus), 6 (chorus)") — check that B and C name different bars. Borrow a *behaviour* (e.g.
 "answers every second line"), never retype a melody.
 
-**What not to do**, in one line: do not smooth the rhythm, do not delete repeated notes, do not replace leaps with
-steps, do not remove colour notes, do not flatten the meter, do not shrink the range, do not turn the second voice
-into a filler, do not drop the chords. Each of those is a `FIX` from the tool, not a style choice.
+**What not to do**: for A these are never repairs: replacing a held note with a run, filling a breath that is part
+of the delivery, smoothing a leap (prepare it before the leap instead), and changing a phrase's landing degree.
+If your fix removes the thing you named as a weakness, you removed a quirk, not a fault. In general: do not smooth
+the rhythm, do not delete repeated notes, do not replace leaps with steps, do not remove colour notes, do not
+flatten the meter, do not shrink the range, do not turn the second voice into a filler, do not drop the chords.
+Each of those is a `FIX` from the tool, not a style choice.
 
 **Where recipes tend to help** (details in `maqam_recipes.md` §3, a suggestion not a list of permissions): a cadence
 or an `Ins` figure in A; also a contour or lift idea in B and C, inside the section they rewrite. Chords: the source's
@@ -141,6 +156,10 @@ are the default; the recipe's palette is there if you decide a changed bar wants
 above (signature gesture, meter, tempo, range) apply to recipe material exactly as to anything else you write.
 
 ### 4. Write the ABC
+Before writing a bar, list every phrase as (start degree, apex, landing degree, breath after the last note). After
+writing, diff the list. A changed landing or a deleted breath is allowed only if the named weakness is that cadence
+or that breath; otherwise restore it.
+
 ```
 cp <song>/score.abc <song>/VAR_A_score.abc       # then edit bars in place
 python scripts/abc_tool.py scale --maqam <Target> --tonic <Tonic> --key-from <song>/score.abc
@@ -148,8 +167,15 @@ python scripts/abc_tool.py scale --maqam <Target> --tonic <Tonic> --key-from <so
 - Follow `references/abc_writing.md`. Top of file: `% VARIANT A of <folder> | <Maqam> on <Tonic> | recipe: Enhance`.
 - Keep `M:` changes exactly where the source has them, in **both** voices (and keep the bar count).
 - Keep or add `% line N` comments so notes map to words. No `w:` lines. No quarter-tone reliance.
+- **`Ins` is a line**: at least one continuous 2-4 bar counter-melody per section, sounding share within ±5 points of
+  the source section. Four-note cells dropped into rests are fills, not a second voice; they do not fix "the chorus
+  has no `Ins`".
+- **Prosody**: count notes per lyric syllable in every rewritten phrase. Flag above 1.5 notes/syllable and say why
+  (melisma, or a phrase that no longer fits the line).
 - If you wrote bars from scratch and dropped the chords, put them back:
   `python scripts/abc_tool.py chords-from <song>/score.abc VAR_A_score.abc` (it refuses to write if any note moves).
+  A chordless source is a lost chord track, not a property: restore it from the original or say the seed has no
+  harmony; do not call a chordless score "ready for generation".
 - Accidentals: write them on every affected note (see `native_dialect.md` §3).
 
 Control (baseline for the listening test):
@@ -162,8 +188,8 @@ Never edit the control by hand; the command proves every note, onset, duration a
 ```
 python scripts/abc_tool.py verify <song-folder> --maqam <Target> --tonic <Tonic>
 ```
-It runs: bars, dialect, maqam, **fidelity + character + meter + chords**, layout parity, cadences, and the
-distinctness between variants. Exit code 1 = `FIX` lines remain. Detail commands:
+It runs: bars, dialect, maqam, **fidelity + character (whole file and per section) + meter + chords**, layout
+parity, cadences, and the distinctness between variants. Exit code 1 = `FIX` lines remain. Detail commands:
 ```
 check / lint / modal                          (bars, dialect, maqam)
 compare VAR_A_score.abc score.abc             (how much of the source survived)
@@ -171,14 +197,16 @@ features VAR_A_score.abc --tonic <Tonic>      (the numbers that must not collaps
 structure VAR_A_score.abc --tonic <Tonic>     (per-section register: did the chorus actually lift?)
 ```
 **Fidelity floors** (from `fidelity_report`): melodic similarity, shared onset grid, repeated-pitch share, step/leap
-balance, range, median note length, second-voice activity, meter scheme, chord presence. A `FIX` here means the
-variant drifted too far — go back and edit *less*: start again from the source and change fewer bars.
+balance, range, median note length, second-voice activity, meter scheme, chord presence. The same character floors
+are applied **per section**, so a rewritten chorus cannot lose its leaps behind a healthy whole-file average. A `FIX`
+here means the variant drifted too far — go back and edit *less*: start again from the source and change fewer bars.
 `WARN` lines: fix if cheap, otherwise mention in the report.
 - A `FIX` that survives 4 rounds: keep the file with `% UNRESOLVED: <what>` as its second line, list it in the report
   and index. A file that fails `check` (broken bars) is never delivered.
 
 ### 6. Write `VAR_REPORT.md`
-Template: `references/report_template.md`. Short, simple Arabic. It must contain: the maqam decision and evidence;
+Template: `references/report_template.md`. Short, simple Arabic. It must contain: the provenance of the source
+(original score or an earlier variant) and the maqam decision with evidence;
 the flavor card (**what we protected**); the weakness list and which variant fixes which; a table of the three
 variants with *what changed* (be quantitative: "11 notes out of 394"), where to listen (bars), and one thing to
 notice; the quality checks (fidelity numbers, meter kept, chords kept); assumptions; a `Recipe use:` line and a `My own ideas beyond the recipe:` line per variant

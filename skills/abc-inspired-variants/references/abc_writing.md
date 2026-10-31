@@ -137,10 +137,12 @@ The user generates tracks from these files, so what abcjs plays is what the gene
 - **Keep the register the source uses.** Do not compress it "for singability": a span close to two octaves is normal
   here and is part of what he liked. Making every line sit in one comfortable octave is the single most common way a
   variant turns dull.
-- **`Ins` is an arrangement line, not a filler.** It may answer in the voice's gaps (good), but it must also be
-  allowed to play through a section as a counter-melody. Match roughly how much it sounds in the source (`structure`
-  prints the note count and `features` the sounding share): turning a 15%-of-the-time line into four 3-note fills
-  empties the arrangement.
+- **`Ins` is a line, not a filler.** At least one continuous 2-4 bar counter-melody per section, with a sounding
+  share within ±5 points of the source section (`structure` prints the note count, `features` the sounding share).
+  It may answer in the voice's gaps, but it must also be allowed to play through a section as a counter-melody.
+  Four-note cells dropped into rests are fills, not a second voice, and do not fix "the chorus has no `Ins`".
+- **A chordless source is a lost chord track, not a property.** Restore it from the original with `chords-from`, or
+  say in the report that the seed has no harmony; never call a chordless score "ready for generation".
 - Avoid grace notes, tuplets and microtonal accidentals.
 - Keep the source's melodic quirks: repeated notes, leaps, and the colour degrees it leans on. A "cleaner" seed
   generates a cleaner, duller track.

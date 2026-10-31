@@ -105,5 +105,9 @@ A variant is a repair of a score that already passed these tests. So:
    deliberately left open (ending on 2 or b3) may stay open. Only the final note of the piece must be the tonic —
    and if the source ends elsewhere, that is a named weakness to repair, not a rule to impose on every phrase.
 4. The `Ins` voice obeys the same scale (the tool allows it slightly more freedom for passing notes).
-5. The degree mix (`features`, `degrees_pct`) is close to the source's. Losing a colour degree the source leans on
-   (b7 in Nahawand, 6 in Hijaz) is a `character` FIX from `verify`, not a "cleaner" result.
+5. The degree mix (`features`, `degrees_pct`) matches the source's within ±2 points per degree. b7 going from 2.3% to
+   7.6% is a different colour, not a repair: colour is matched, not maximised. Losing a colour degree the source leans
+   on (b7 in Nahawand, 6 in Hijaz) is a `character` FIX from `verify`, not a "cleaner" result.
+6. **"In scale" is not "in maqam".** Scale membership is the first test, not the last: check the 2↔b3 pair, the
+   cadence formulas and the degree mix. Say "in scale" when that is all you checked; never write `CONFIRMED` on
+   membership alone.

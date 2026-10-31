@@ -32,7 +32,9 @@ compare  : longest identical melodic run (in intervals, so transposition does no
            For a variant, HIGH is good: it means the song survived. The FIX/floor
            rules live in `verify` (fidelity_report): melodic similarity, shared note
            starts, repeated-note share, step/leap balance, range, median note length,
-           second-voice activity, meter scheme and chord presence.
+           second-voice activity, meter scheme and chord presence — the same character
+           floors are checked per section, so a flattened chorus cannot hide behind a
+           healthy whole-file average.
 
 Handles what auto-transcribed scores contain: voices (V:), chord symbols, ties,
 key signatures with bar-long accidental memory, Z multi-bar rests, mid-tune M:/L:
@@ -912,6 +914,9 @@ def section_table(P, tonic):
             row.update(lo=min(ps), hi=max(ps), mean_pitch=round(statistics.mean(ps), 1),
                        notes_per_bar=round(len(notes) / max(b1 - b0, 1), 1),
                        repeated_pitch_pct=round(100 * sum(1 for x in iv if x == 0) / max(len(iv), 1)),
+                       step_pct=round(100 * sum(1 for x in iv if 0 < abs(x) <= 2) / max(len(iv), 1)),
+                       leap_pct=round(100 * sum(1 for x in iv if abs(x) >= 3) / max(len(iv), 1)),
+                       median_note_sec=round(sec(statistics.median(n[2] for n in notes), qpm), 2),
                        first_degree=DEG[(notes[0][3] - tonic) % 12], last_degree=DEG[(notes[-1][3] - tonic) % 12],
                        last_note_beats=round(notes[-1][2], 1), apex_degree=DEG[(apex[3] - tonic) % 12],
                        apex_at_pct=round(100 * (apex[1] - t0) / max(t1 - t0, 1e-6)))
@@ -1236,6 +1241,32 @@ def fidelity_report(src_path, cand_path, letter):
     chk(ratio < lo or ratio > hi,
         "median note length moved from %ss to %ss (x%s; allowed x%s-%s): the rhythm density left "
         "the song's own range" % (fs["median_note_sec"], fc["median_note_sec"], round(ratio, 2), lo, hi))
+    # Section-level character. The untouched 80% keeps the whole-file averages healthy, so a single
+    # rewritten section can be flattened (a chorus that loses its leaps) and still pass above. Apply
+    # the floors where both files have the same section in the same bars.
+    for s_row, c_row in zip(section_table(S, S["meta"]["tonic"]), section_table(C, C["meta"]["tonic"])):
+        if s_row.get("label") != c_row.get("label") or s_row.get("start_bar") != c_row.get("start_bar") \
+                or s_row.get("bars") != c_row.get("bars"):
+            continue
+        if s_row.get("vocal_notes", 0) < 8 or c_row.get("vocal_notes", 0) < 8:
+            continue
+        tag = "section %d (%s)" % (s_row["start_bar"], s_row["label"])
+        if c_row["leap_pct"] < s_row["leap_pct"] - 4 - 1e-9:
+            msgs.append(("FIX", "character: %s lost its leaps (%s%% -> %s%%, more than 4 points). A rewritten "
+                                "section keeps the source section's leap share."
+                          % (tag, s_row["leap_pct"], c_row["leap_pct"])))
+        if c_row["repeated_pitch_pct"] < s_row["repeated_pitch_pct"] - 5 - 1e-9:
+            msgs.append(("FIX", "character: %s lost its repeated-note recitation (%s%% -> %s%%, more than "
+                                "5 points)." % (tag, s_row["repeated_pitch_pct"], c_row["repeated_pitch_pct"])))
+        if c_row.get("hi") is not None and s_row.get("hi") is not None and c_row["hi"] < s_row["hi"]:
+            msgs.append(("FIX", "character: %s no longer reaches the source's apex (%s -> %s). Keep the "
+                                "section's top note." % (tag, s_row["hi"], c_row["hi"])))
+        if s_row.get("median_note_sec"):
+            sr = c_row["median_note_sec"] / max(s_row["median_note_sec"], 1e-9)
+            if sr < 0.6 or sr > 1.6:
+                msgs.append(("FIX", "character: %s median note length moved from %ss to %ss (x%s; allowed "
+                                    "x0.6-1.6)." % (tag, s_row["median_note_sec"], c_row["median_note_sec"],
+                                                    round(sr, 2))))
     mins = [v for v in S["voices"] if v != mv]
     minc = [v for v in C["voices"] if v != mv]
     if mins and minc:
