@@ -47,6 +47,11 @@ Pleasant, tidy, and not his song. Do not do this.
    what the generator receives. Carry them over with `chords-from` unless the melody of that bar changed so much
    that the chord no longer fits — then replace it with a chord from the same scale and say so in the report.
 10. **Do not try to name the song.** The fingerprint tools are for deciding what to keep and what to repair.
+11. **Recipes are a starting point, not a ceiling** (`references/maqam_recipes.md`). When you are about to write *new*
+    notes (a cadence, an `Ins` figure, a recomposed section, a new chorus), read the section of your decided maqam for
+    ideas. Take, combine, bend or ignore them; if you know a better move for this song, use it. Fit what you take to
+    the song's own rhythm, and vary it from song to song. If the task text contains `NO_RECIPES`, do not open that file
+    (control condition of an experiment) and write `Recipe use: none`.
 
 Read `references/project_context.md` (what ABC can and cannot do, what is known) and
 `references/native_dialect.md` once per run. If `FEEDBACK_LOG.md` exists in the data root, read it and follow it;
@@ -106,7 +111,8 @@ python scripts/abc_tool.py maqam <song>/score.abc --label <Label>
 Statuses: CONFIRMED (use the label), KEEP_LABEL (use the label, say so), OVERRIDE (use the tool's TARGET, state it
 prominently), LOW_FIT (label, core notes only), NO_LABEL (TARGET). Read `TONIC UNSURE` / `CLOSE RIVALS` and decide
 by where phrases rest and where the song ends. Record **(maqam, tonic)** and one sentence of evidence.
-Read `references/maqam_rules.md` before touching a pitch.
+Read `references/maqam_rules.md` before touching a pitch (and, if you will write new material and the task does not say
+`NO_RECIPES`, the matching section of `references/maqam_recipes.md` for ideas).
 
 ### 3. Choose the three recipes
 All three keep: maqam, tonic, `K:`, `L:`, section order, bar counts, the **meter scheme including mid-tune changes**,
@@ -128,6 +134,11 @@ the whole-piece similarity beside it will be high in all three and is not a defe
 **What not to do**, in one line: do not smooth the rhythm, do not delete repeated notes, do not replace leaps with
 steps, do not remove colour notes, do not flatten the meter, do not shrink the range, do not turn the second voice
 into a filler, do not drop the chords. Each of those is a `FIX` from the tool, not a style choice.
+
+**Where recipes tend to help** (details in `maqam_recipes.md` §3, a suggestion not a list of permissions): a cadence
+or an `Ins` figure in A; also a contour or lift idea in B and C, inside the section they rewrite. Chords: the source's
+are the default; the recipe's palette is there if you decide a changed bar wants a different one. The identity rules
+above (signature gesture, meter, tempo, range) apply to recipe material exactly as to anything else you write.
 
 ### 4. Write the ABC
 ```
@@ -170,8 +181,8 @@ variant drifted too far — go back and edit *less*: start again from the source
 Template: `references/report_template.md`. Short, simple Arabic. It must contain: the maqam decision and evidence;
 the flavor card (**what we protected**); the weakness list and which variant fixes which; a table of the three
 variants with *what changed* (be quantitative: "11 notes out of 394"), where to listen (bars), and one thing to
-notice; the quality checks (fidelity numbers, meter kept, chords kept); assumptions; and the hypothesis each
-variant tests. Under ~60 lines.
+notice; the quality checks (fidelity numbers, meter kept, chords kept); assumptions; a `Recipe use:` line and a `My own ideas beyond the recipe:` line per variant
+(see `maqam_recipes.md` §8); and the hypothesis each variant tests. Under ~60 lines.
 
 ### 7. After the last song: `VARIANTS_INDEX.md` at the root
 One row per song: folder, label, final maqam and tonic, status, anything unresolved; OVERRIDE / LOW_FIT /
@@ -183,6 +194,8 @@ and stop. No questions.
 He will name songs/variants and say what he heard, in a few words. Then:
 1. Append to `FEEDBACK_LOG.md`: date, song, variant, recipe, his words, your interpretation (labelled hypothesis),
    decision. Factual and short.
+1b. In the log entry also note the `Recipe use:` lines of the variants he is talking about, so that over time it shows
+   which recipe items he likes or rejects (low confidence until repeated; the corpus has not confirmed any of them yet).
 2. **First question is always "too far or not far enough?"** If a generated track came out worse than the source,
    the seed was too different: go *closer* (higher fidelity, fewer edits), never bolder. If it came out identical
    and dull, go one step further on exactly one dimension.
